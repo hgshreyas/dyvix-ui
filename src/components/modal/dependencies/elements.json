@@ -57,5 +57,22 @@
     "is_custom": true,
     "requires-options": true,
     "r-variant": true
+  },
+  {
+    "element": "checkbox",
+    "tag": "input",
+    "tag-type": "checkbox",
+    "default-class": "modal-checkbox",
+    "aria": {
+      "role": "checkbox",
+      "aria-required": false,
+      "aria-label": ""
+    },
+    "supports-placeholder": false,
+    "supports_type": true,
+    "supports_autocomplete": false,
+    "is_custom": false,
+    "requires-options": false,
+    "r-variant": true
   }
 ]

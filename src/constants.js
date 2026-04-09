@@ -43,5 +43,7 @@ export const DYVIX_MODAL_ELEMENT = {
   TEL: 'tel',
   SELECT: 'select',
   D_SELECT: 'd-select',
-  AUTOCOMPLETE: 'autocomplete'
+  AUTOCOMPLETE: 'autocomplete',
+  CHECKBOX: 'checkbox'
 };
+

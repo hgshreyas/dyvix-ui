@@ -150,6 +150,12 @@ function ModalExample() {
           name: 'password',
           className: 'ex-text',
           amount: 1
+        },
+        {
+          type: DYVIX_MODAL_ELEMENT.CHECKBOX,
+          name: "newsletter",
+          placeholder: "Subscribe to dyvix UI newsletter!",
+          amount: 1
         }
       ]}
       onSubmit={(data) => console.log(data)}

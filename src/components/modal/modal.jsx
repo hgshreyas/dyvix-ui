@@ -311,6 +311,19 @@ function Modal({
                               </option>
                             ))}
                           </Tag>
+                        ) : field.type === 'checkbox' ? (
+                          <label key={j} className="modal-checkbox-label">
+                            <Tag
+                              {...Tagprobs}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  name,
+                                  elementDef['is_custom'] ? e : e.target.checked
+                                )
+                              }
+                            />
+                            {field.placeholder?.[j]}
+                          </label>
                         ) : (
                           <Tag
                             key={j}

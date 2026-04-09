@@ -29,7 +29,8 @@ const supportedTypes = [
   'password',
   'search',
   'url',
-  'tel'
+  'tel',
+  'checkbox'
 ];
 
 export function SerializeData(

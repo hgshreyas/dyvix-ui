@@ -176,3 +176,9 @@
   text-align: center;
   text-shadow: 0 0 8px rgba(255, 77, 77, 0.4);
 }
+.modal-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
