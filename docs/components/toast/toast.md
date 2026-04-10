@@ -29,15 +29,18 @@ The container holds & manages toast settings for all outgoing toasts
 ```jsx
 import { DyvixToastContainer, dyvixToast } from 'dyvix-ui';
 
-function notify()
+function ToastExample()
 {
-  dyvixToast.success('This a new message');
-}
+  function notify()
+  {
+    dyvixToast.success('This a new message');
+  }
 
-return (
-  <>
-    <DyvixToastContainer position='top-right' duration={5000} animation='fade'/>
-    <button onClick={notify}>Notify</button>
-  </>
-)
+  return (
+    <>
+      <DyvixToastContainer position='top-right' duration={5000} animation='fade'/>
+      <button onClick={notify}>Notify</button>
+    </>
+  )
+}
 ```

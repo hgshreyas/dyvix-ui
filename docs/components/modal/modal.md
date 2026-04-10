@@ -35,6 +35,8 @@ The modal component is a core Dyvix UI component. It's a config driven, animated
       - : `string | string[]`. The key used in the `onSubmit` callback. If the amount is greater than 1 this must be provided as an array of strings with length matching that of the amount.
     - `placeholder`
       - : `string | string[]`. The text displayed when the input is empty. If the amount is greater than 1 this must be provided as an array of strings with length matching that of the amount.
+    - `id`
+      - : `string | string[]`. A Unique optional ID for indivisual fields, allowing more control for the developer. If the amount is greater than 1 this must be provided as an array of strings with length matching that of the amount.
     - `options`
       - : `Array of Array[values]`. Required when type is `select`, `d-select`, and `autocomplete`. It provides selection data for the supported elements, the amount of sub-arrays must match the amount property. For example:
 
