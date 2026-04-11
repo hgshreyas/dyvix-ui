@@ -44,6 +44,11 @@
   bottom: 1rem;
   left: 1rem;
 }
+.dyvix-top-center {
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .dyvix-bottom-center {
   bottom: 1rem;
   left: 50%;
