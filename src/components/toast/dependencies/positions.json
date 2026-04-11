@@ -14,5 +14,9 @@
   {
     "position": "bottom-right",
     "class": "dyvix-bottom-right"
+  },
+  {
+    "position": "bottom-center",
+    "class": "dyvix-bottom-center"
   }
 ]
