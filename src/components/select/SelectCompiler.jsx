@@ -8,6 +8,15 @@ import { gsap } from 'gsap';
 const supportedTypes = ['select', 'autocomplete'];
 const validAnimations = animationsData.map((e) => e.animation);
 
+/**
+ * @param {Object} props
+ * @param {Array<Object>} props.elements - Array of select elements
+ * @param {Function} [props.onChange] - Change callback
+ * @param {('select'|'autocomplete')} props.type - Select type
+ * @param {string} [props.animation] - Animation name, defaults to fade
+ * @param {string} [props.Class] - Select class
+ * @param {string} [props.placeholder] - Select placeholder
+ */
 function DynamicSelect({
   elements = [],
   onChange,
