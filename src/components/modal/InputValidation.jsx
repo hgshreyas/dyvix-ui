@@ -3,7 +3,8 @@ import {
   vaildThemes,
   validAnimations,
   eleData,
-  validPreset
+  validPreset,
+  validRules
 } from './modal';
 import presetData from './dependencies/presets.json';
 import {
@@ -11,12 +12,14 @@ import {
   GaurdStatus,
   allowsNull
 } from '../../utils/DyvixGuard';
+import { isValidRegex } from './dependencies/validator/validators';
 
 const defaultElement = {
   type: '!/',
   placeholder: ['!/'],
   id: '!/',
   className: '!/',
+  validation: '!/',
   amount: 1
 };
 // auto generate these soon
@@ -221,6 +224,47 @@ function validateElements(elements) {
           error: 'Element name should be a string or an array of length 1.'
         };
       }
+    }
+    
+    // Handels Validator engine validator
+    // Supports regex
+    const rules = Array.isArray(element.validation) 
+              ? element.validation 
+              : [element.validation];
+
+    if(rules.length > element.amount) {
+      return {
+        status: GaurdStatus.Error,
+        error: `Validation overflow: maximum of 3 rules allowed.`
+      };
+    }
+
+    for(const rule of rules)
+    {
+      if (rule === "!/") break;
+      if (!rule || typeof rule !== 'string') continue;
+
+      if (rule.startsWith('$R'))
+      {
+        const [pattern, customError] = rule.slice(2).split('|');
+
+        if(!isValidRegex(pattern))
+        {
+          return {
+            status: GaurdStatus.Error,
+            error: `Invalid Regular Expression was provided.`
+          };
+        }
+        
+      }
+      else if (!validRules.includes(rule))
+      {
+        return {
+          status: GaurdStatus.Error,
+          error: `'${rule}' is not a recognized validator.`
+        };
+      }
+
     }
   }
 
