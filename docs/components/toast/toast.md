@@ -18,6 +18,8 @@ The container holds & manages toast settings for all outgoing toasts
   - : `number`. The default duration is `5000` ms. Controls how the duration that indivisual toast is showed.
 - `animation`
   - : `string`. Controls the entrance animation of the indivisual toast. Defaults to `zoom`. See the [Animation Presets](/guide/animations) for a full list.
+- `segments`
+  - : `number`. The default segment is 10. Controls how many toast is shown per container.
 
 ### Toast
 
@@ -40,6 +42,7 @@ function ToastExample() {
         position="top-right"
         duration={5000}
         animation="fade"
+        segments={5}
       />
       <button onClick={notify}>Notify</button>
     </>
