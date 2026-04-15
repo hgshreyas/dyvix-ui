@@ -161,11 +161,15 @@
   flex-direction: column;
   width: 100%;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 1rem;
   align-items: center;
   min-height: 40px;
 }
 .dyvix-error-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.75rem;
   position: absolute;
   bottom: -0.3rem;
   color: #ff4d4d;
