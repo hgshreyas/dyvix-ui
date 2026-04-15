@@ -1,8 +1,7 @@
-<h1 align="center">
-  <img width="100" height="100" alt="Dyvix logo" src="https://raw.githubusercontent.com/younisdev/dyvix-ui/main/src/static/logo.png" />
-  <br />
-  Dyvix UI
-</h1>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/younisdev/dyvix-ui/main/src/static/logo.png" width="100" height="100" alt="Dyvix UI Logo" />
+  <h1>Dyvix UI</h1>
+</div>
 <h4 align="center">
   Dyvix is an open source, modern, config-driven, animated component UI library. Beautiful by default, customizable by design.
 </h4>
