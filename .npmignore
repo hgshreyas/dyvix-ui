@@ -12,3 +12,4 @@ vite.config.ts
 src/static/
 .vitepress/
 dev-engine
+devbench/
