@@ -1,0 +1,14 @@
+.dyvix-button {
+  position: relative;
+  background: #0d0d0f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 22px;
+  color: #d3e9ff;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  font-weight: 500;
+}
+.dyvix-button:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
