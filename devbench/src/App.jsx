@@ -7,6 +7,7 @@ import React from 'react';
 import { ModalTest } from './component/modal';
 import { SelectTest } from './component/select';
 import { ToastTest } from './component/toast';
+import { ButtonTest } from './component/button';
 import dyvixLogo from './assets/logo.png';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -14,7 +15,8 @@ import { useGSAP } from '@gsap/react';
 const Links = {
   Modal: ModalTest,
   Toast: ToastTest,
-  Select: SelectTest
+  Select: SelectTest,
+  Button: ButtonTest
 };
 
 function App() {
