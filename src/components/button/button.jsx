@@ -58,9 +58,11 @@ function DyvixButton({
   };
 
   return (
-    <button ref={btnRef} {...props} onClick={() => handleClick}>
-      {children}
-    </button>
+    <div className='dyvix-btn-wrapper' ref={btnRef}>
+      <button {...props} onClick={() => handleClick}>
+        {children}
+      </button>
+    </div>
   );
 }
 

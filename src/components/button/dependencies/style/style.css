@@ -1,3 +1,8 @@
+.dyvix-btn-wrapper
+{
+  width: fit-content;
+  height: fit-content;
+}
 .dyvix-button {
   position: relative;
   background: #0d0d0f;
@@ -8,7 +13,10 @@
   cursor: pointer;
   overflow: hidden;
   font-weight: 500;
-  font-family: 'Geist';
+  font-family: 'Geist', sans-serif;
+  letter-spacing: -0.02em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 .dyvix-button:hover {
   border-color: rgba(0, 0, 0, 0.2);
