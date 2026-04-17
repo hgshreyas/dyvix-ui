@@ -11,7 +11,7 @@ function DyvixButton({
   children = 'Click Me',
   animation = 'fade',
   className = '',
-  theme,
+  theme = '',
   background,
   color,
   onClick,
@@ -36,7 +36,7 @@ function DyvixButton({
     }
   }
 
-  className = `dyvix-button ${currentTheme.class} ${className}`;
+  className = `dyvix-button${currentTheme ? ` ${currentTheme.class}` : ''}${className !== '' ? ` ${className}` : ''}`;
 
   useGSAP(() => {
     if (!btnRef.current || !currentAnimation) return;
@@ -50,17 +50,20 @@ function DyvixButton({
 
   const props = {
     className: className,
+    disabled: rest.disabled,
     style: {
-      background: background,
-      color: color,
+      ...(background && {background: background}),
+      ...(color && {color: color}),
       ...style
     }
   };
 
   return (
-    <button ref={btnRef} {...props} onClick={() => handleClick}>
-      {children}
-    </button>
+    <div className='dyvix-btn-wrapper' ref={btnRef} {...rest}>
+      <button {...props} onClick={handleClick}>
+        {children}
+      </button>
+    </div>
   );
 }
 
