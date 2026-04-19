@@ -177,12 +177,11 @@ function Modal({
         SetData((prev) => ({ ...prev, [name]: null }));
       });
     });
-    /*
+
     (async () => {
     const res = await SJCManager("../../components/modal/dependencies/themes.json" ,"../../components/modal/dependencies/style/themes.css", CACHETYPE.CSS, "Modal", "theme", "Industrial", "class");
     console.log(res);
   })();
-  */
   }, []);
 
   // Auto-focus for the first input when modal opens

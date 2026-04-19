@@ -140,3 +140,15 @@ async function extractCSSClass(classname, Csspath=null, cssblock=null) {
 
   return block;
 }
+
+function InjectCSS(csstext, Key)
+{
+  const existing = document.querySelector(Key);
+
+  if (existing) return;
+  const style = document.createElement('style');
+  
+  style.id = key;
+  style.textContent = csstext;
+  document.head.appendChild(style);
+}
