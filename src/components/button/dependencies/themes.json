@@ -44,5 +44,10 @@
     "class": "dyvix-button-ocean",
     "default-animation": "flip",
     "radiused": false
+  },
+  {
+    "theme": "Forest",
+    "class": "dyvix-button-forest",
+    "default-animation": "glide"
   }
 ]
