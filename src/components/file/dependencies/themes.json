@@ -38,5 +38,10 @@
     "theme": "Sunset",
     "class": "dyvix-file-sunset",
     "default-animation": "drop"
+  },
+  {
+    "theme": "Ocean",
+    "class": "dyvix-file-ocean",
+    "default-animation": "flip"
   }
 ]
