@@ -228,7 +228,7 @@ function Modal({
   return (
     <>
       {visibility && (
-        <div ref={modalRef} className="dyvix-modal-wrapper">
+        <div ref={modalRef} className="dyvix-modal-wrapper" role="dialog" aria-modal="true" aria-labelledby="modal-header">
           <div
             className={`modal ${serilaizedclassName}`}
             id={Id}
