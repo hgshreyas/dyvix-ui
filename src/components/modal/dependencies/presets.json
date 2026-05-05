@@ -52,5 +52,21 @@
     "default-animation": "fade",
     "default-theme": "Neon",
     "default-title": "Login"
+  },
+  {
+    "preset": "ForgotPassword",
+    "fields": [
+      {
+        "type": "email",
+        "placeholder": "Email Address",
+        "validation": "email",
+        "id": "email",
+        "name": "email",
+        "amount": 1
+      }
+    ],
+    "default-animation": "fade",
+    "default-theme": "Neon",
+    "default-title": "Forgot Password"
   }
 ]
