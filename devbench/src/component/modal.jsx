@@ -13,7 +13,7 @@ export function ModalTest() {
       Id="register-modal"
       className="modalsss"
       theme={DYVIX_GLOBAL_THEME.FROST}
-      preset={'ChangePassword'}
+      preset={'ResetPassword'}
       type="auth"
       elements={[
         {

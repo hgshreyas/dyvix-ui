@@ -70,6 +70,30 @@
     "default-title": "Forgot Password"
   },
   {
+    "preset": "ResetPassword",
+    "fields": [
+      {
+        "type": "password",
+        "placeholder": "New Password",
+        "validation": "password",
+        "id": "new-password",
+        "name": "newPassword",
+        "amount": 1
+      },
+      {
+        "type": "password",
+        "placeholder": "Confirm Password",
+        "validation": "password",
+        "id": "confirm-password",
+        "name": "confirmPassword",
+        "amount": 1
+      }
+    ],
+    "default-animation": "fade",
+    "default-theme": "Neon",
+    "default-title": "Reset Password"
+  },
+  {
     "preset": "ChangePassword",
     "fields": [
       {
