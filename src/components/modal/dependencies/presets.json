@@ -68,5 +68,37 @@
     "default-animation": "fade",
     "default-theme": "Neon",
     "default-title": "Forgot Password"
+  },
+  {
+    "preset": "ChangePassword",
+    "fields": [
+      {
+        "type": "password",
+        "placeholder": "Current Password",
+        "validation": "password",
+        "id": "current-password",
+        "name": "currentPassword",
+        "amount": 1
+      },
+      {
+        "type": "password",
+        "placeholder": "New Password",
+        "validation": "password",
+        "id": "new-password",
+        "name": "newPassword",
+        "amount": 1
+      },
+      {
+        "type": "password",
+        "placeholder": "Confirm New Password",
+        "validation": "password",
+        "id": "confirm-new-password",
+        "name": "confirmNewPassword",
+        "amount": 1
+      }
+    ],
+    "default-animation": "fade",
+    "default-theme": "Neon",
+    "default-title": "Change Password"
   }
 ]
