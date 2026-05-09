@@ -98,30 +98,3 @@
   border-color: #17a2b8;
   box-shadow: inset 0 0 4px rgba(2, 3, 5, 0.848);
 }
-/* move to positions.css ? */
-.dyvix-top-right {
-  top: 1rem;
-  right: 1rem;
-}
-.dyvix-top-left {
-  top: 1rem;
-  left: 1rem;
-}
-.dyvix-bottom-right {
-  bottom: 1rem;
-  right: 1rem;
-}
-.dyvix-bottom-left {
-  bottom: 1rem;
-  left: 1rem;
-}
-.dyvix-top-center {
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.dyvix-bottom-center {
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
