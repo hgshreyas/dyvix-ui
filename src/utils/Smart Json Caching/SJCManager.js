@@ -4,6 +4,16 @@ import { set, get } from 'idb-keyval';
 
 export const CACHETYPE = { CSS: 'css', Default: 'default' };
 const VERSION = Version['version'];
+const CSS_LIBRARY = import.meta.glob('/src/components/**/*.css', { 
+  query: '?raw', 
+  import: 'default',
+  eager: true 
+});
+const JSON_LIBRARY = import.meta.glob('/src/components/**/*.json', { 
+  query: '?raw', 
+  import: 'default',
+  eager: true 
+});
 
 export async function SJCManager(
   jsonpath,
@@ -196,13 +206,34 @@ async function cachelayerOne(
 }
 
 async function extractFile(path) {
-  try {
-    const module = await import(/* @vite-ignore */ `${path}?raw`);
-    return module.default || module;
-  } catch (error) {
-    console.log('DyvixUI Sys error');
+  if(!path) {
+    console.warn("DyvixUI: Invalid path")
     return null;
   }
+
+  let content = null;
+
+  if (typeof CSS_LIBRARY !== 'undefined' && path.endsWith('.css')) {
+    content = CSS_LIBRARY[path];
+  } 
+  
+  if (typeof JSON_LIBRARY !== 'undefined' && path.endsWith('.json')) {
+    content = JSON_LIBRARY[path];
+  }
+  
+  if(!content)
+  {
+    // fallback
+    try {
+      const module = await import(/* @vite-ignore */ `${path}?raw`);
+      content =  module.default || module;
+    } catch (error) {
+      console.warn(`DyvixUI: Content not found at ${path}`);
+      return null;
+    }
+  }
+
+  return content;
 }
 
 function generateCacheKey(component, utility) {
@@ -214,12 +245,7 @@ function generateCacheKey(component, utility) {
 async function extractCSSClass(classname, Csspath = null, cssblock = null) {
   let rawCSS = null;
   if (Csspath !== null) {
-    try {
-      const module = await import(/* @vite-ignore */ `${Csspath}?raw`);
-      rawCSS = module.default || module;
-    } catch (error) {
-      console.log('DyvixUI Sys error');
-    }
+    rawCSS = extractFile(Csspath);
   } else if (cssblock !== null) {
     rawCSS = cssblock;
   } else {
