@@ -9,23 +9,33 @@ export default function ButtonPlayground() {
       utility: 'theme',
       type: 'select',
       options: DYVIX_GLOBAL_THEME,
-      current: DYVIX_GLOBAL_THEME.OCEAN
+      current: DYVIX_GLOBAL_THEME.OCEAN,
+      format: 'string'
     },
     {
       utility: 'animation',
       type: 'select',
       options: DYVIX_GLOBAL_ANIMATION,
-      current: DYVIX_GLOBAL_ANIMATION.BUBBLE
+      current: DYVIX_GLOBAL_ANIMATION.BUBBLE,
+      format: 'string'
     },
     {
       utility: 'background',
       type: 'color',
-      current: null
+      current: undefined,
+      format: 'string'
     },
     {
       utility: 'color',
       type: 'color',
-      current: null
+      current: undefined,
+      format: 'string'
+    },
+    {
+      utility: 'children',
+      type: 'text',
+      current: 'Submit',
+      format: 'string'
     }
   ]);
 
@@ -33,18 +43,21 @@ export default function ButtonPlayground() {
   const animation = config.find((e) => e['utility'] === 'animation').current;
   const background = config.find((e) => e['utility'] === 'background').current;
   const color = config.find((e) => e['utility'] === 'color').current;
-
+  const children = config.find((e) => e['utility'] === 'children').current;
   const probs = {
-    ...(theme && {theme: theme}),
-    ...(animation && {animation: animation}),
-    ...(background && {background: background}),
-    ...(color && {color: color}),
-
-  }
+    ...(theme && { theme: theme }),
+    ...(animation && { animation: animation }),
+    ...(background && { background: background }),
+    ...(color && { color: color })
+  };
   return (
-    <Wrapper componentConfig={config} componentCallback={setConfig}>
+    <Wrapper
+      componentConfig={config}
+      componentCallback={setConfig}
+      tag={'DyvixButton'}
+    >
       <DyvixButton onClick={() => console.log('clicked')} {...probs}>
-        Submit
+        {children}
       </DyvixButton>
     </Wrapper>
   );
