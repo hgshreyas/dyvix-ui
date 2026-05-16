@@ -22,18 +22,18 @@ export default function ButtonPlayground() {
     {
       utility: 'background',
       type: 'color',
-      current: null,
+      current: undefined,
       format: 'string'
     },
     {
       utility: 'color',
       type: 'color',
-      current: null,
+      current: undefined,
       format: 'string'
     },
     {
       utility: 'children',
-      type: 'children',
+      type: 'text',
       current: 'Submit',
       format: 'string'
     }
@@ -43,7 +43,7 @@ export default function ButtonPlayground() {
   const animation = config.find((e) => e['utility'] === 'animation').current;
   const background = config.find((e) => e['utility'] === 'background').current;
   const color = config.find((e) => e['utility'] === 'color').current;
-
+  const children = config.find((e) => e['utility'] === 'children').current;
   const probs = {
     ...(theme && { theme: theme }),
     ...(animation && { animation: animation }),
@@ -57,7 +57,7 @@ export default function ButtonPlayground() {
       tag={'DyvixButton'}
     >
       <DyvixButton onClick={() => console.log('clicked')} {...probs}>
-        Submit
+        {children}
       </DyvixButton>
     </Wrapper>
   );
