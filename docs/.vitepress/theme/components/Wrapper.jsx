@@ -12,6 +12,7 @@ export default function Wrapper({
 }) {
   const [snippet, setSnippet] = React.useState('');
   const [copied, setCopied] = React.useState(null);
+  const [activeConfig, setActive] = React.useState('');
 
   function handleCopy() {
     navigator.clipboard.writeText(snippet);
@@ -24,7 +25,9 @@ export default function Wrapper({
     for (const ele of componentConfig) {
       if (ele.utility === 'children' || ele.type === 'children') continue;
       const val =
-        ele.type === 'config' ? JSON.stringify(ele.current, null, 2) : ele.current;
+        ele.type === 'config'
+          ? JSON.stringify(ele.current, null, 2)
+          : ele.current;
       const formattedVal = ele.format === 'string' ? `"${val}"` : `{${val}}`;
       curr += ele.current ? `${ele.utility}=${formattedVal}\n` : '';
     }
@@ -97,14 +100,25 @@ export default function Wrapper({
                   value={ele.current}
                 ></input>
               );
-            } else if (ele.type === 'config')
-            {
-              currentInput = <button className='playground-config-btn'>{ele['config-title']}</button>
+            } else if (ele.type === 'config') {
+              currentInput = (
+                <>
+                  <button className="playground-config-btn" onClick={() => setActive(ele.utility)}>
+                    {ele['config-title']}
+                  </button>
+
+                  {activeConfig === ele.utility &&
+                    <>hi</>
+                  }
+                </>
+              );
             }
             if (currentInput) {
               return (
                 <div key={ele.utility} className="dyvix-hud-item">
-                  {ele.type !== 'config' ? <label htmlFor={`${ele.utility}-${i}`}>{ele.utility}</label> : null}
+                  {ele.type !== 'config' ? (
+                    <label htmlFor={`${ele.utility}-${i}`}>{ele.utility}</label>
+                  ) : null}
                   {React.cloneElement(currentInput)}
                 </div>
               );

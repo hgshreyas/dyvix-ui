@@ -142,8 +142,7 @@
 }
 .playground-text,
 .playground-select,
-.playground-config-btn
-{
+.playground-config-btn {
   background: rgba(13, 8, 34, 0.92);
   border: 1px solid rgba(131, 195, 203, 0.08);
   border-radius: 1.25rem;
@@ -158,8 +157,7 @@
 }
 .playground-text:hover,
 .playground-select:hover,
-.playground-config-btn:hover
-{
+.playground-config-btn:hover {
   border-color: rgba(131, 195, 203, 0.22);
   transform: translateY(-2px);
   box-shadow:
