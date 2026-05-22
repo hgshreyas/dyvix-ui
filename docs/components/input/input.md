@@ -37,6 +37,10 @@ A config-driven animated input component with support for default coloring style
 - `onChange`
   - : `function`. A callback function triggered upon input value change.
 
+## Try it
+
+<InputPlayground />
+
 ## Example
 
 ```jsx
