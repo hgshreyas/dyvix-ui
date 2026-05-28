@@ -23,12 +23,14 @@ import {
 import { GaurdStatus } from '../../utils/DyvixGuard';
 import Version from '../../../package.json';
 import DyvixButton from '../button/button';
+import DyvixFile from '../file/file';
+import { values } from 'idb-keyval';
 
 export const validType = typesData.map((e) => e.type);
 export const validRules = validationData.map((e) => e.preset);
 
 export const eleData = elementsData;
-const componentsMap = { DynamicSelect: DynamicSelect };
+const componentsMap = { DynamicSelect: DynamicSelect, DyvixFile: DyvixFile };
 
 /**
  * @param {Object} props
@@ -366,6 +368,9 @@ function Modal({
                         placeholder: field.placeholder[j],
                         'aria-label': field.placeholder[j]
                       }),
+                      ...(elementDef['supports-label'] && {
+                        label: field.placeholder[j]
+                      }),
                       ...(elementDef['supports_type'] && { type: field.type }),
                       ...(elementDef['supports_autocomplete'] && {
                         autoComplete:
@@ -378,20 +383,29 @@ function Modal({
                       }),
                       ...(ErrorId && {
                         'aria-describedby': ErrorId
+                      }),
+                      ...(elementDef.tag !== 'DyvixFile' && {
+                        onChange: (e) => {
+                          console.log(Tag)
+                          const value = elementDef['is_custom']
+                            ? e
+                            : field.type === 'checkbox'
+                              ? e.target.checked
+                              : e.target.value;
+                          handleInputChange(name, value);
+                        }
+                      }),
+                      ...(elementDef.tag === 'DyvixFile' && {
+                        onUpload: (e) => {
+                          handleInputChange(name, e);
+                        }
                       })
                     };
 
                     return (
                       <div className="dyvix-field-wrapper" key={name}>
                         {elementDef['requires-options'] && Tag === 'select' ? (
-                          <Tag
-                            defaultValue=""
-                            key={j}
-                            {...Tagprobs}
-                            onChange={(e) =>
-                              handleInputChange(name, e.target.value)
-                            }
-                          >
+                          <Tag defaultValue="" key={j} {...Tagprobs}>
                             <option disabled value="">
                               {field.placeholder[j]}
                             </option>
@@ -408,28 +422,11 @@ function Modal({
                           </Tag>
                         ) : field.type === 'checkbox' ? (
                           <label key={j} className="modal-checkbox-label">
-                            <Tag
-                              {...Tagprobs}
-                              onChange={(e) =>
-                                handleInputChange(
-                                  name,
-                                  elementDef['is_custom'] ? e : e.target.checked
-                                )
-                              }
-                            />
+                            <Tag {...Tagprobs} />
                             {field.placeholder?.[j]}
                           </label>
                         ) : (
-                          <Tag
-                            key={j}
-                            {...Tagprobs}
-                            onChange={(e) =>
-                              handleInputChange(
-                                name,
-                                elementDef['is_custom'] ? e : e.target.value
-                              )
-                            }
-                          />
+                          <Tag key={j} {...Tagprobs} />
                         )}
                         <span className="dyvix-error-text" id={ErrorId}>
                           {fieldError}

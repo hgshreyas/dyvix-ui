@@ -47,7 +47,24 @@ export function ModalTest() {
       theme={DYVIX_GLOBAL_THEME.NEON}
       //  preset={'ResetPassword'}
       type="auth"
-      elements={stressTestData}
+      elements={[
+        {
+          type: 'file',
+          placeholder: ['File one', 'file two', 'filex'],
+          id: 'file',
+          name: ['Fileone', 'filetwo', 'fol'],
+          className: 'ex-text',
+          amount: 3
+        },
+        {
+          type: 'text',
+          placeholder: ['First Name', 'Last Name'],
+          id: 'name',
+          name: ['firstName', 'lastName'],
+          className: 'ex-text',
+          amount: 2
+        }
+      ]}
       onSubmit={(data) => console.log(data)}
       onChange={(data) => console.log(data)}
     />
