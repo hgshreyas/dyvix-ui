@@ -54,7 +54,7 @@ function DyvixFile({
 
   function handleUiClick(e) {
     e.stopPropagation();
-    if(fileInputRef.current) {
+    if (fileInputRef.current) {
       fileInputRef.current.click();
     }
   }

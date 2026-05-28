@@ -30,7 +30,7 @@ export const validType = typesData.map((e) => e.type);
 export const validRules = validationData.map((e) => e.preset);
 
 export const eleData = elementsData;
-const componentsMap = { DynamicSelect: DynamicSelect, DyvixFile: DyvixFile};
+const componentsMap = { DynamicSelect: DynamicSelect, DyvixFile: DyvixFile };
 
 /**
  * @param {Object} props
@@ -384,22 +384,28 @@ function Modal({
                       ...(ErrorId && {
                         'aria-describedby': ErrorId
                       }),
-                      onChange: (e) => {
-                        const value = elementDef['is_custom'] ? e : (field.type === 'checkbox' ? e.target.checked: e.target.value);
-                        handleInputChange(
-                          name,
-                          value
-                        );}
+                      ...(elementDef.tag !== 'DyvixFile' && {
+                        onChange: (e) => {
+                          console.log(Tag)
+                          const value = elementDef['is_custom']
+                            ? e
+                            : field.type === 'checkbox'
+                              ? e.target.checked
+                              : e.target.value;
+                          handleInputChange(name, value);
+                        }
+                      }),
+                      ...(elementDef.tag === 'DyvixFile' && {
+                        onUpload: (e) => {
+                          handleInputChange(name, e);
+                        }
+                      })
                     };
 
                     return (
                       <div className="dyvix-field-wrapper" key={name}>
                         {elementDef['requires-options'] && Tag === 'select' ? (
-                          <Tag
-                            defaultValue=""
-                            key={j}
-                            {...Tagprobs}
-                          >
+                          <Tag defaultValue="" key={j} {...Tagprobs}>
                             <option disabled value="">
                               {field.placeholder[j]}
                             </option>
@@ -416,16 +422,11 @@ function Modal({
                           </Tag>
                         ) : field.type === 'checkbox' ? (
                           <label key={j} className="modal-checkbox-label">
-                            <Tag
-                              {...Tagprobs}
-                            />
+                            <Tag {...Tagprobs} />
                             {field.placeholder?.[j]}
                           </label>
                         ) : (
-                          <Tag
-                            key={j}
-                            {...Tagprobs}
-                          />
+                          <Tag key={j} {...Tagprobs} />
                         )}
                         <span className="dyvix-error-text" id={ErrorId}>
                           {fieldError}
