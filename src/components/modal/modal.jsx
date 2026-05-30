@@ -192,6 +192,10 @@ function Modal({
   };
   if (currentPreset) {
     title = title !== '!/' ? title : currentPreset['default-title'];
+    animation =
+      animation !== '!/'
+        ? animation
+        : currentPreset['default-animation'] || 'fade';
     theme =
       theme !== '!/' ? theme : currentPreset['default-theme'] || 'Singularity';
   }
