@@ -68,7 +68,7 @@
   {
     "theme": "Crimson",
     "class": "dyvix-modal-crimson",
-    "default-animation": "glitch",
-    "radiused": true
+    "default-animation": "float",
+    "radiused": false
   }
 ]
