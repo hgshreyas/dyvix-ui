@@ -19,6 +19,22 @@ const CacheMapping = {
 
 export async function Validatelbl(animation, theme, callback, instance) {
   let normalizedAnimation = animation?.trim().toLowerCase();
+  const normalizedTheme =
+    theme?.trim().charAt(0).toUpperCase() + theme.trim().slice(1);
+
+  const isTheme = await ValidatAndLoadJSON(
+    CacheMapping,
+    normalizedTheme,
+    callback,
+    'theme',
+    component,
+    instance
+  );
+
+  if (normalizedAnimation === '!/' && isTheme?.config?.theme) {
+    normalizedAnimation = isTheme?.config?.theme['default-animation'];
+  }
+
   const isAnimation = await ValidatAndLoadJSON(
     CacheMapping,
     normalizedAnimation,

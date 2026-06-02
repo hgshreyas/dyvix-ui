@@ -4,6 +4,7 @@ import { EvaluateFailure, GuardStatus } from '../../utils/DyvixGuard';
 import { Validatelbl } from './validation';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Version from '../../../package.json';
 
 function DyvixLabel({
   children,
@@ -11,20 +12,22 @@ function DyvixLabel({
   htmlFor,
   style,
   animation = '!/',
+  theme = '!/',
   ...rest
 }) {
   const lblRef = React.useRef(null);
   const [configs, SetConfig] = React.useState({});
-  const instanceId = React.useId();  
-  
-  className = `dyvix-label${className !== '' ? ` ${className}` : ''}`;
+  const instanceId = React.useId();
   const currentAnimation = animation ? configs['animation'] : null;
+  const currentTheme = theme !== '!/' ? configs['theme'] : null;
+
+  className = `dyvix-label ${currentTheme?.class ?? ''} ${className}`.trim();
 
   React.useEffect(() => {
     async function validate() {
       const validator = await Validatelbl(
         animation,
-        '',
+        theme,
         SetConfig,
         instanceId
       );
@@ -35,7 +38,12 @@ function DyvixLabel({
     }
 
     validate();
-  }, [animation]);
+    return () => {
+      const key = `DYVIX_${Version['version']}_Label_theme_${instanceId}`;
+      const ele = document.getElementById(key);
+      if (ele) ele.remove();
+    };
+  }, [animation, theme]);
 
   useGSAP(() => {
     if (!lblRef.current || !currentAnimation) return;
@@ -53,9 +61,10 @@ function DyvixLabel({
     style
   };
 
-  return ( <div className="dyvix-label-wrapper" ref={lblRef} {...rest}>
-    <label {...props}>{children}</label>
-  </div>
+  return (
+    <div className="dyvix-label-wrapper" ref={lblRef} {...rest}>
+      <label {...props}>{children}</label>
+    </div>
   );
 }
 
