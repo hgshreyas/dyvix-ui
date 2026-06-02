@@ -48,5 +48,10 @@
     "theme": "Midnight",
     "class": "dyvix-input-midnight",
     "default-animation": "drift"
+  },
+  {
+    "theme": "Crimson",
+    "class": "dyvix-input-crimson",
+    "default-animation": "glitch"
   }
 ]

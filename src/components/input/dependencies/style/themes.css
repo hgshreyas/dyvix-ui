@@ -363,3 +363,33 @@
     inset 0 0 20px rgba(112, 168, 247, 0.2);
   transform: translateY(-2px) scale(1.01);
 }
+.dyvix-input-crimson {
+  background: #1a0000;
+  color: #ffd6d6;
+  border: 1px solid #ff4d4d;
+  border-radius: 10px;
+  box-shadow: 0 0 18px rgba(255, 77, 77, 0.25);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease,
+    background-color 0.25s ease;
+}
+.dyvix-input-crimson:hover {
+  background: #2a0000;
+  border-color: #ff6666;
+  box-shadow: 0 0 24px rgba(255, 77, 77, 0.4);
+  transform: scale(1.01);
+}
+.dyvix-input-crimson:focus {
+  outline: none;
+  background: #2a0000;
+  border-color: #ff8080;
+  box-shadow:
+    0 0 28px rgba(255, 77, 77, 0.55),
+    0 0 0 2px rgba(255, 77, 77, 0.18);
+}
+
+.dyvix-input-crimson::placeholder {
+  color: rgba(255, 214, 214, 0.7);
+}
