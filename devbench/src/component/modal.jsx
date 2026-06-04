@@ -44,8 +44,10 @@ export function ModalTest() {
       title="Register"
       Id="register-modal"
       className="modalsss"
-      theme={'Neon'}
-      //  preset={'ResetPassword'}
+      //background="red"
+    // theme={'Neon'}
+      //background={'Red'}
+      //\  preset={'ResetPassword'}
       type="auth"
       elements={[
         {
