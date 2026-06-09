@@ -20,7 +20,11 @@ A config-driven animated label component with support for themed and default col
 ## Example
 
 ```jsx
-import { DyvixLabel, DYVIX_GLOBAL_ANIMATION, DYVIX_GLOBAL_THEME } from 'dyvix-ui';
+import {
+  DyvixLabel,
+  DYVIX_GLOBAL_ANIMATION,
+  DYVIX_GLOBAL_THEME
+} from 'dyvix-ui';
 
 function LabelExample() {
   return (
@@ -34,3 +38,7 @@ function LabelExample() {
   );
 }
 ```
+
+## Try it
+
+<LabelPlayground />
