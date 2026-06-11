@@ -1,10 +1,10 @@
-import { 
-  DyvixTable, 
-  DyvixTableHeader, 
-  DyvixTableBody, 
-  DyvixTableRow, 
-  DyvixTableHead, 
-  DyvixTableCell 
+import {
+  DyvixTable,
+  DyvixTableHeader,
+  DyvixTableBody,
+  DyvixTableRow,
+  DyvixTableHead,
+  DyvixTableCell
 } from 'dyvix-ui';
 import { DYVIX_GLOBAL_ANIMATION, DYVIX_GLOBAL_THEME } from 'dyvix-ui';
 export function TableTest() {

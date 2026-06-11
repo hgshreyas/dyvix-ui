@@ -8,9 +8,7 @@ function DyvixTable({ children, className = '' }) {
 
   return (
     <div className="dyvix-table-wrapper">
-      <table {...props}>
-        {children}
-      </table>
+      <table {...props}>{children}</table>
     </div>
   );
 }
