@@ -8,3 +8,8 @@ export { default as DyvixFile } from './components/file/file';
 export { default as DyvixInput } from './components/input/input';
 export { default as DyvixLabel } from './components/label/label';
 export { default as DyvixTable } from './components/table/table';
+export { default as DyvixTableBody } from './components/table/DyvixTableBody';
+export { default as DyvixTableHeader } from './components/table/DyvixTableHeader';
+export { default as DyvixTableRow } from './components/table/DyvixTableRow';
+export { default as DyvixTableCell } from './components/table/DyvixTableCell';
+export { default as DyvixTableHead } from './components/table/DyvixTableHead';
