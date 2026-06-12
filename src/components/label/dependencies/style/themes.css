@@ -45,6 +45,28 @@
     0px 4px 12px rgba(255, 69, 0, 0.9),
     0px 0px 30px rgba(255, 69, 0, 0.5);
 }
+.dyvix-label-frost {
+  font-family: 'Geist';
+  color: rgba(213, 255, 248, 1);
+  border-bottom: 2px groove #ffffff40;
+  padding-bottom: 2px;
+  text-shadow:
+    0 0 8px rgba(213, 255, 248, 0.65),
+    0 0 20px rgba(248, 248, 248, 0.25);
+  transition:
+    color 0.3s ease-in-out,
+    border-color 0.2s ease-in-out,
+    text-shadow 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+.dyvix-label-frost:hover {
+  color: #f8f8f8;
+  border-bottom-color: #f8f8f840;
+  text-shadow:
+    0 0 12px rgba(213, 255, 248, 0.8),
+    0 0 30px rgba(248, 248, 248, 0.35);
+  transform: translateY(-1px);
+}
 .dyvix-label-ocean {
   font-family: 'Geist';
   color: #e0f7ff;
