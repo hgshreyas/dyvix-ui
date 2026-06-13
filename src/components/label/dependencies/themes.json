@@ -20,6 +20,11 @@
     "default-animation": "unfold"
   },
   {
+    "theme": "Blade",
+    "class": "dyvix-label-blade",
+    "default-animation": "Zoom"
+  },
+  {
     "theme": "Ocean",
     "class": "dyvix-label-ocean",
     "default-animation": "flip"

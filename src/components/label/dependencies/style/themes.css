@@ -67,6 +67,19 @@
     0 0 30px rgba(248, 248, 248, 0.35);
   transform: translateY(-1px);
 }
+.dyvix-label-blade {
+  font-family: 'Geist';
+  color: #e2e8f0;
+  border-bottom: 2px solid #ffffff20;
+  padding-bottom: 2px;
+  transition:
+    color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+}
+.dyvix-label-blade:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
 .dyvix-label-ocean {
   font-family: 'Geist';
   color: #e0f7ff;
