@@ -148,13 +148,13 @@ function Modal({
       }
     }
     SetErrors(newErrors);
+    return newErrors;
   }
   function handleSubmit() {
-    const validation = handleValidation(data);
+    const newErrors = handleValidation(data);
     const allow =
-      Object.values(errors).every((val) => val === null) &&
-      Object.keys(errors).length > 0;
-
+      Object.values(newErrors).every((val) => val === null) &&
+      Object.keys(data).some((key) => data[key] !== null);
     if (typeof onSubmit === 'function' && allow) {
       onSubmit(data);
     }
@@ -465,7 +465,7 @@ function Modal({
             {currentType.submit && (
               <DyvixButton
                 className="modal-btn"
-                onClick={() => handleSubmit}
+                onClick={handleSubmit}
                 theme={theme.toLowerCase()}
               >
                 {currentType.submitLabel}
