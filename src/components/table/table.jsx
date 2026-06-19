@@ -11,6 +11,18 @@ import { ValidateTable } from './validation';
 import { GuardStatus, EvaluateFailure } from '../../utils/DyvixGuard';
 import Version from '../../../package.json';
 
+/**
+ * @param {Object} props
+ * @param {React.ReactNode} [props.children] - Composable mode content (DyvixTableHeader, DyvixTableBody, etc.)
+ * @param {string} [props.className] - Additional className
+ * @param {string} [props.animation] - Animation name, defaults to 'fade'
+ * @param {('Singularity'|'Crimson')} [props.theme] - Table theme
+ * @param {string} [props.background] - Custom background color
+ * @param {string} [props.color] - Custom text color
+ * @param {Array<{key: string, label: string}>} [props.columns] - Column definitions for config-driven mode
+ * @param {Array<Object>} [props.data] - Row data for config-driven mode, keys must match column keys
+ * @param {Object} [props.style] - Inline style overrides
+ */
 function DyvixTable({
   children,
   className = '',
