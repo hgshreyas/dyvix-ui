@@ -29,3 +29,4 @@ Thanks for everyone who has contributed to Dyvix UI!
 - [@daveranola](https://github.com/daveranola)
 - [@GovindKurapati](https://github.com/GovindKurapati)
 - [@LuisOrlando-code](https://github.com/LuisOrlando-code)
+- [@hakkiai](https://github.com/hakkiai)
