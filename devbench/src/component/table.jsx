@@ -11,8 +11,8 @@ export function TableTest() {
   return (
     <>
       <DyvixTable
-        animation={DYVIX_GLOBAL_ANIMATION.DRIFT}
-        theme={DYVIX_GLOBAL_THEME.MIDNIGHT}
+        animation={DYVIX_GLOBAL_ANIMATION.GLIDE}
+        theme={DYVIX_GLOBAL_THEME.FOREST}
         columns={[
           { key: 'id', label: 'ID' },
           { key: 'name', label: 'Name' },
@@ -28,7 +28,7 @@ export function TableTest() {
           { id: 5, name: 'Bear', type: 'Wild', hp: 90, region: 'Amr' }
         ]}
       />
-      <DyvixTable theme={DYVIX_GLOBAL_THEME.MIDNIGHT} animation={DYVIX_GLOBAL_ANIMATION.DRIFT}>
+      <DyvixTable theme={DYVIX_GLOBAL_THEME.FOREST} animation={DYVIX_GLOBAL_ANIMATION.GLIDE}>
         <DyvixTableHeader>
           <DyvixTableRow>
             <DyvixTableHead>Vehicle</DyvixTableHead>
