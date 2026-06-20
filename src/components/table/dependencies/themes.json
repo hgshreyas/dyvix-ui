@@ -13,5 +13,10 @@
     "theme": "Midnight",
     "class": "dyvix-table-midnight",
     "default-animation": "drift"
+  },
+  {
+    "theme": "Forest",
+    "class": "dyvix-table-forest",
+    "default-animation": "glide"
   }
 ]
