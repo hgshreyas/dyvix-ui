@@ -111,14 +111,26 @@ function DyvixTable({
           <DyvixTableRow>
             {columns.map((col, i) => {
               const isColumnSortable = col.sortable === true;
+              const activeSort = isColumnSortable ? sortConfig.find((config) => config.key === col.key): null;
+              let sortIndicator = null;
+
+              if(activeSort) {
+                if(activeSort.direction === 'asc') {
+                  sortIndicator = ' ▲';
+                } else if (activeSort.direction === 'desc') {
+                  sortIndicator = ' ▼';
+                }
+              }
               return (
                 <DyvixTableHead
                   key={col.key || i}
                   {...(isColumnSortable && {
-                    onClick: () => handleSortClick(col.key)
+                    onClick: () => handleSortClick(col.key),
+                    className: 'table-sortable'
                   })}
                 >
                   {typeof col === 'string' ? col : col.label}
+                  {isColumnSortable && <span className='dyvix-table-sort-icon'>{sortIndicator || ' ↕'}</span>}
                 </DyvixTableHead>
               );
             })}
