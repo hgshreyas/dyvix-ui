@@ -183,6 +183,7 @@ function Modal({
       border: currentTheme['input-border']
     })
   };
+
   const serilaizedclassName =
     className +
     `${currentTheme?.class ? ` ${currentTheme?.class}` : ''}` +
@@ -405,7 +406,7 @@ function Modal({
                       style: {
                         fontSize: fontSize,
                         fontWeight: fontWeight,
-                        ...themeInputStyle
+                        ...(elementDef['tag'] !== 'DyvixInput' && {...themeInputStyle})
                       },
                       ...ariaAttributes,
                       ...(id && id !== '!/' && { id: id }),
@@ -486,7 +487,6 @@ function Modal({
                         <span
                           className="dyvix-error-text"
                           id={ErrorId}
-                          style={themeTextStyle}
                         >
                           {fieldError}
                         </span>
