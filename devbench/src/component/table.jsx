@@ -11,8 +11,8 @@ export function TableTest() {
   return (
     <>
       <DyvixTable
-        animation={DYVIX_GLOBAL_ANIMATION.GLIDE}
-        theme={DYVIX_GLOBAL_THEME.OCEAN}
+        animation={DYVIX_GLOBAL_ANIMATION.PULSE}
+        theme={DYVIX_GLOBAL_THEME.NEON}
         columns={[
           { key: 'id', label: 'ID', sortable: true },
           { key: 'name', label: 'Name', sortable: true },
@@ -29,8 +29,8 @@ export function TableTest() {
         ]}
       />
       <DyvixTable
-        theme={DYVIX_GLOBAL_THEME.OCEAN}
-        animation={DYVIX_GLOBAL_ANIMATION.GLIDE}
+        theme={DYVIX_GLOBAL_THEME.NEON}
+        animation={DYVIX_GLOBAL_ANIMATION.PULSE}
       >
         <DyvixTableHeader>
           <DyvixTableRow>
