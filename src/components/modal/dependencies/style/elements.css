@@ -190,6 +190,28 @@
   gap: 0.5rem;
   cursor: pointer;
 }
+.modal-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: flex-start;
+}
+.modal-radio-legend {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+.modal-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.modal-radio {
+  accent-color: #0ea5e9;
+  cursor: pointer;
+}
 .modal-textarea {
   max-height: 70px;
   min-height: 35px;

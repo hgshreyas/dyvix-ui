@@ -388,12 +388,11 @@ function Modal({
                       ariaAttributes['aria-required'] =
                         ariaProps['aria-required'];
                     }
-                    const options =
-                      Tag === 'select' || elementDef.tag === 'DynamicSelect'
-                        ? Array.isArray(field.options[0])
-                          ? field.options[j]
-                          : field.options
-                        : [];
+                    const options = elementDef['requires-options']
+                      ? Array.isArray(field.options[0])
+                        ? field.options[j]
+                        : field.options
+                      : [];
                     const fieldError = errors[name];
                     const ErrorId =
                       `${id && id !== '!/' ? id : field.placeholder[j]}-error`
@@ -474,6 +473,36 @@ function Modal({
                               </option>
                             ))}
                           </Tag>
+                        ) : field.type === 'radio' ? (
+                          <div
+                            key={j}
+                            className="modal-radio-group"
+                            role="radiogroup"
+                            aria-label={field.placeholder?.[j]}
+                            style={themeTextStyle}
+                          >
+                            {field.placeholder?.[j] &&
+                              field.placeholder[j] !== '!/' && (
+                                <span className="modal-radio-legend">
+                                  {field.placeholder[j]}
+                                </span>
+                              )}
+                            {options.map((opt, index) => (
+                              <label key={index} className="modal-radio-label">
+                                <input
+                                  type="radio"
+                                  className="modal-radio"
+                                  name={name}
+                                  value={opt}
+                                  checked={data[name] === opt}
+                                  onChange={() => handleInputChange(name, opt)}
+                                  {...(id &&
+                                    id !== '!/' && { id: `${id}-${index}` })}
+                                />
+                                {opt}
+                              </label>
+                            ))}
+                          </div>
                         ) : field.type === 'checkbox' ? (
                           <label
                             key={j}

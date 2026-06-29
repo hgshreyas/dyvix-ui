@@ -52,6 +52,7 @@ export const DYVIX_MODAL_ELEMENT = {
   D_SELECT: 'd-select',
   AUTOCOMPLETE: 'autocomplete',
   CHECKBOX: 'checkbox',
+  RADIO: 'radio',
   FILE: 'file'
 };
 export const DYVIX_MODAL_PRESET = {

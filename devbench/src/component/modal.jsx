@@ -39,6 +39,40 @@ export function ModalTest() {
     return props;
   });
 
+  // Radio element example. Toggle `useRadio` to preview the new `radio`
+  // input type (single-selection group, value is the chosen option).
+  const useRadio = true;
+  const radioElements = [
+    {
+      type: 'text',
+      name: 'fullName',
+      placeholder: 'Full Name',
+      amount: 1
+    },
+    {
+      type: 'radio',
+      name: 'plan',
+      placeholder: 'Choose a plan',
+      options: ['Free', 'Pro', 'Enterprise'],
+      amount: 1
+    }
+  ];
+
+  if (useRadio) {
+    return (
+      <Modal
+        title="Sign up"
+        Id="radio-modal"
+        className="testmodal"
+        theme={'Crimson'}
+        type="form"
+        elements={radioElements}
+        onSubmit={(data) => console.log('submitted', data)}
+        onChange={(data) => console.log(data)}
+      />
+    );
+  }
+
   return (
     <Modal
       title="Register"
