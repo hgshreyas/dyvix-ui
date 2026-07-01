@@ -15,6 +15,9 @@ Dyvix provides a wide range of presets. You can trigger these by passing the str
 
 - `'Register'`
 - `'Login'`
+- `'ForgotPassword'`
+- `'ResetPassword'`
+- `'ChangePassword'`
 
 ## Usage
 
