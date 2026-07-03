@@ -192,15 +192,17 @@
 }
 .modal-radio-group {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.7rem;   
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
 }
 .modal-radio-legend {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   opacity: 0.85;
+  margin-right: 0.2rem;
 }
 .modal-radio-label {
   display: flex;
