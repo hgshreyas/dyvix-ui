@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { EvaluateFailure, GuardStatus } from '../../utils/DyvixGuard';
 import { ValidateSelect } from './validation';
+import Version from '../../../package.json';
 
 /**
  * @param {Object} props
@@ -20,6 +21,9 @@ function DyvixSelect({
   onChange,
   type = 'select',
   animation = 'fade',
+  theme = '!/',
+  background,
+  dropdownBackground,
   className,
   placeholder = '',
   style,
@@ -91,8 +95,11 @@ function DyvixSelect({
     }));
   };
   const currentAnimation = animation ? configs['animation'] : null;
+  const currentTheme = theme !== '!/' ? configs['theme'] : null;
   className =
-    `dyvix-select-wrapper${className !== '' ? ` ${className}` : ''}`.trim();
+    `dyvix-select-wrapper ${currentTheme?.class ?? ''} ${className !== '' ? ` ${className}` : ''}`.trim();
+  const dropdownThemeClass = currentTheme?.['dropdown-class'];
+  const inputThemeClass = currentTheme?.['input-class'];
 
   React.useEffect(() => {
     async function validate() {
@@ -100,7 +107,7 @@ function DyvixSelect({
         elements,
         type,
         animation,
-        '',
+        theme,
         SetConfig,
         instanceId
       );
@@ -111,7 +118,12 @@ function DyvixSelect({
     }
 
     validate();
-  }, [animation]);
+    return () => {
+      const key = `DYVIX_${Version['version']}_Select_theme_${instanceId}`;
+      const ele = document.getElementById(key);
+      if (ele) ele.remove();
+    };
+  }, [animation, theme]);
 
   function HandleKey(e, controller) {
     if (Select.is_open == false) return;
@@ -164,7 +176,9 @@ function DyvixSelect({
   }, [currentAnimation]);
   const props = {
     className: className,
-    style: style
+    style: {
+    ...style
+  }
   };
   const inputProps = {
     autoComplete: 'off',
@@ -172,8 +186,9 @@ function DyvixSelect({
     'aria-autocomplete': 'list',
     'aria-expanded': Select.is_open,
     'aria-haspopup': 'listbox',
-    className: `dyvix-select-input`,
+    className: `dyvix-select-input ${inputThemeClass}`.trim(),
     type: 'text',
+    ...(background && { style: { background: background } }),
     ...rest,
     ref: selectRef,
     placeholder: placeholder || undefined,
@@ -202,6 +217,8 @@ function DyvixSelect({
     inputRef: selectRef,
     activeIndex: Select.activeIndex,
     ref: dropdownSelectRef,
+    ...(dropdownBackground && { background: dropdownBackground }),
+    ...(dropdownThemeClass && { className: dropdownThemeClass }),
     controller: SetSelect,
     OnChangeCallback: (value) => onChangeInternalCallback(value),
     placeholder: placeholder || undefined

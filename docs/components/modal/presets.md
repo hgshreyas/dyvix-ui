@@ -7,14 +7,17 @@ next:
 
 # Modal Presets
 
-Modal presets represet a premade config for common modal usecases.
+Modal presets represent a premade config for common modal usecases.
 
-## Available elements
+## Available presets
 
 Dyvix provides a wide range of presets. You can trigger these by passing the string name.
 
 - `'Register'`
 - `'Login'`
+- `'ForgotPassword'`
+- `'ResetPassword'`
+- `'ChangePassword'`
 
 ## Usage
 

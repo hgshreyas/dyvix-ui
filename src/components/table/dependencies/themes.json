@@ -38,5 +38,15 @@
     "theme": "Blade",
     "class": "dyvix-table-blade",
     "default-animation": "drift"
+  },
+  {
+    "theme": "Aurora",
+    "class": "dyvix-table-aurora",
+    "default-animation": "aurora"
+  },
+  {
+    "theme": "Industrial",
+    "class": "dyvix-table-industrial",
+    "default-animation": "fade"
   }
 ]

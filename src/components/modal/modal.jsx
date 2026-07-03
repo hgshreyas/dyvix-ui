@@ -425,7 +425,7 @@ function Modal({
                         autoComplete:
                           field.type === 'password' ? 'current-password' : 'on'
                       }),
-                      ...(elementDef.tag === 'DynamicSelect' && {
+                      ...(elementDef.tag === 'DyvixSelect' && {
                         elements: options,
                         animation: '!/',
                         className: 'modal-element'

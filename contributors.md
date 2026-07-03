@@ -35,3 +35,8 @@ Thanks for everyone who has contributed to Dyvix UI!
 - [@TaH00R](https://github.com/TaH00R)
 - [@arishaix](https://github.com/arishaix)
 - [@uttam12331](https://github.com/uttam12331)
+- [@punyajain312](https://github.com/punyajain312)
+- [@MaxwellM34](https://github.com/MaxwellM34)
+- [@serkancakmakk](https://github.com/serkancakmakk)
+- [@omar2004khaled](https://github.com/omar2004khaled)
+- [@subhakartadimalla](https://github.com/subhakartadimalla)

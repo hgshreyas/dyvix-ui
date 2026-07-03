@@ -17,6 +17,8 @@ A config-driven animated select component with support for normal and autocomple
   - : `function`. A callback function triggered every time the select value changes. It receives the value directly.
 - `type`
   - : `string`. The type of the select component. Defaults to `select`.
+- `theme`
+  - : `string`. Controls the design and the feel of the select. See the [Themes list](/guide/themes) for a full list.
 - `animation`
   - : `string`. Controls the entrance animation of the select. See the [Animation Presets](/guide/animations) for a full list.
 - `className`
@@ -36,13 +38,14 @@ Dyvix Select Includes 2 types of select each type behaving differnetly:
 ## Example
 
 ```jsx
-import { DynamicSelect } from 'dyvix-ui';
+import { DyvixSelect } from 'dyvix-ui';
 
 function SelectExample() {
   return (
-    <DynamicSelect
+    <DyvixSelect
       className="ex-select"
       type="select"
+      theme="Singularity"
       elements={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
       onChange={(data) => console.log(data)}
     />

@@ -15,7 +15,9 @@ const SelectEngine = forwardRef(
       activeIndex,
       inputRef,
       OnChangeCallback,
-      type
+      type,
+      background,
+      className
     },
     ref
   ) => {
@@ -50,7 +52,8 @@ const SelectEngine = forwardRef(
             height: 'auto',
             opacity: 1,
             duration: 1.1,
-            ease: 'power2.inOut'
+            ease: 'power2.inOut',
+            overwrite: 'auto'
           }
         );
       } else {
@@ -58,30 +61,26 @@ const SelectEngine = forwardRef(
           height: 0,
           opacity: 0,
           duration: 0.3,
-          ease: 'power2.inOut'
+          ease: 'power2.inOut',
+          overwrite: 'auto'
         });
       }
     }, [is_open, elements]);
-
 
     useEffect(() => {
       if (activeIndex >= 0 && itemsRef.current[activeIndex]) {
         itemsRef.current[activeIndex].scrollIntoView({ block: 'nearest' });
       }
     }, [activeIndex]);
-
+console.log(background)
     return (
       <>
         {is_rendered && (
           <ul
-            className="dyvix-dropdown-select"
+            className={`dyvix-dropdown-select ${className}`.trim()}
             role="listbox"
-            style={
-              is_open
-                ? { background: 'whitesmoke', border: '1px solid #e2e8f0' }
-                : { background: 'transparent', border: 'none' }
-            }
             ref={ref}
+            style={{...(background && {'--dyvix-select-dropdown-color': background})}}
           >
             {is_open &&
               elements.map((element, index) => (
@@ -91,7 +90,12 @@ const SelectEngine = forwardRef(
                   key={index}
                   style={
                     index === activeIndex
-                      ? { backgroundColor: '#e0f7fa', cursor: 'pointer' }
+                      ? {
+                          backgroundColor:
+                            'var(--dyvix-select-active-bg, #e0f7fa)',
+                          color: 'var(--dyvix-select-active-text, #141618)',
+                          cursor: 'pointer'
+                        }
                       : {}
                   }
                   onMouseDown={(e) => {
