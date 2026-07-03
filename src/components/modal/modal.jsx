@@ -1,5 +1,5 @@
 import elementsData from './dependencies/elements.json';
-import DynamicSelect from '../select/SelectCompiler';
+import DyvixSelect from '../select/SelectCompiler';
 import validationData from './dependencies/validator/validators.json';
 import typesData from './dependencies/types.json';
 import './dependencies/style/elements.css';
@@ -26,13 +26,14 @@ import DyvixButton from '../button/button';
 import DyvixFile from '../file/file';
 import DyvixInput from '../input/input';
 import { values } from 'idb-keyval';
+import DyvixLabel from '../label/label';
 
 export const validType = typesData.map((e) => e.type);
 export const validRules = validationData.map((e) => e.preset);
 
 export const eleData = elementsData;
 const componentsMap = {
-  DynamicSelect: DynamicSelect,
+  DyvixSelect: DyvixSelect,
   DyvixFile: DyvixFile,
   DyvixInput: DyvixInput
 };
@@ -483,12 +484,12 @@ function Modal({
                           >
                             {field.placeholder?.[j] &&
                               field.placeholder[j] !== '!/' && (
-                                <span className="modal-radio-legend">
+                                <DyvixLabel className="modal-radio-legend" animation={null} theme={theme}>
                                   {field.placeholder[j]}
-                                </span>
+                                </DyvixLabel>
                               )}
                             {options.map((opt, index) => (
-                              <label key={index} className="modal-radio-label">
+                              <DyvixLabel key={index} className="modal-radio-label" animation={null} theme={theme}>
                                 <input
                                   type="radio"
                                   className="modal-radio"
@@ -500,7 +501,7 @@ function Modal({
                                     id !== '!/' && { id: `${id}-${index}` })}
                                 />
                                 {opt}
-                              </label>
+                              </DyvixLabel>
                             ))}
                           </div>
                         ) : field.type === 'checkbox' ? (
