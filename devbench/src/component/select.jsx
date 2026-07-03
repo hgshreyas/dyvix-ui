@@ -11,6 +11,7 @@ export function SelectTest() {
       // theme={DYVIX_GLOBAL_THEME.SINGULARITY}
       placeholder={'number'}
       background={'Red'}
+      dropdownBackground={'Red'}
       className="ex-select"
       type="select"
       elements={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
