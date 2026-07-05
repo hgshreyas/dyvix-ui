@@ -192,6 +192,16 @@
   transform: translateY(-1px);
 }
 
+.dyvix-label-sunset {
+  color: #8b3a00;
+  text-shadow:
+  0 0 8px rgba(255, 126, 95, 0.55),
+  0 0 23px rgba(254, 180, 123, 0.35);
+  transition:
+  color 0.3s ease-in-out,
+  text-shadow 0.3s ease-in-out,
+  transform 0.3s ease-in-out;
+}
 .dyvix-label-sunset:hover {
   color: #ff6b6b;
   text-shadow:
