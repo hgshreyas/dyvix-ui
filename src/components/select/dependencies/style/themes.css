@@ -37,3 +37,25 @@
 .dyvix-select-lens .dyvix-select-dropdown-lens::-webkit-scrollbar-thumb {
   background: rgba(185, 3, 226, 0.6);
 }
+/* Industrial Theme */
+.dyvix-select-industrial .dyvix-select-input-industrial {
+  background: #2c3e50;
+  border: 2px solid #f1c40f;
+  color: #ffffff;
+  border-radius: 0px;
+}
+
+.dyvix-select-industrial .dyvix-select-dropdown-industrial {
+  background: #2c3e50;
+  border: 1px solid #f1c40f;
+  border-radius: 0px;
+}
+
+.dyvix-select-industrial .dyvix-select-dropdown-industrial li {
+  color: #ffffff;
+}
+
+.dyvix-select-industrial .dyvix-select-dropdown-industrial li:hover {
+  background: #f1c40f;
+  color: #000000;
+}
