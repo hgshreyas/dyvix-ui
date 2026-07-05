@@ -43,3 +43,4 @@ Thanks for everyone who has contributed to Dyvix UI!
 - [@siddhigrg1201](https://github.com/siddhigrg1201)
 - [@gargshambhavi0802-pixel](https://github.com/gargshambhavi0802-pixel)
 - [@priyan923](https://github.com/priyan923)
+- [@shrutig-blip](https://github.com/shrutig-blip)
