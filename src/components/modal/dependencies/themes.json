@@ -75,6 +75,6 @@
   "theme": "Obsidian",
   "class": "dyvix-modal-obsidian",
   "default-animation": "fade",
-  "radiused": true
+  "radiused": false
   }
 ]
