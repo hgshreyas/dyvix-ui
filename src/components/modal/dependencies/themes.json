@@ -72,9 +72,9 @@
     "radiused": false
   },
   {
-  "theme": "Obsidian",
-  "class": "dyvix-modal-obsidian",
-  "default-animation": "fade",
-  "radiused": false
+    "theme": "Obsidian",
+    "class": "dyvix-modal-obsidian",
+    "default-animation": "fade",
+    "radiused": false
   }
 ]

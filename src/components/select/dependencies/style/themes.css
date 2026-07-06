@@ -53,6 +53,7 @@
 .dyvix-select-industrial .dyvix-select-dropdown-industrial li {
   color: #ffffff;
 }
-.dyvix-select-industrial .dyvix-select-dropdown-industrial::-webkit-scrollbar-thumb {
+.dyvix-select-industrial
+  .dyvix-select-dropdown-industrial::-webkit-scrollbar-thumb {
   background: #0a1429;
 }
