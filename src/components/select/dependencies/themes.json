@@ -18,6 +18,6 @@
     "class": "dyvix-select-ember",
     "input-class": "dyvix-select-input-ember",
     "dropdown-class": "dyvix-select-dropdown-ember",
-    "default-animation": "fade"
+    "default-animation": "glitch"
   }
 ]
