@@ -12,5 +12,12 @@
     "input-class": "dyvix-select-input-industrial",
     "dropdown-class": "dyvix-select-dropdown-industrial",
     "default-animation": "fade"
+  },
+  {
+    "theme": "Ember",
+    "class": "dyvix-select-ember",
+    "input-class": "dyvix-select-input-ember",
+    "dropdown-class": "dyvix-select-dropdown-ember",
+    "default-animation": "fade"
   }
 ]
