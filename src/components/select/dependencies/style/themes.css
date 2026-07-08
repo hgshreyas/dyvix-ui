@@ -56,3 +56,13 @@
 .dyvix-select-industrial .dyvix-select-dropdown-industrial::-webkit-scrollbar-thumb {
   background: #0a1429;
 }
+.dyvix-select-blade .dyvix-select-input-blade {
+  background: #1a1a1a;
+  border: 1px solid #ff4500;
+  color: #ffffff;
+}
+.dyvix-select-blade .dyvix-select-dropdown-blade {
+  background: #1a1a1a;
+  border: 1px solid #ff4500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
