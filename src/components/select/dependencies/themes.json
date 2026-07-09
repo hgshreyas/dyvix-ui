@@ -19,5 +19,12 @@
     "input-class": "dyvix-select-input-ember",
     "dropdown-class": "dyvix-select-dropdown-ember",
     "default-animation": "glitch"
+  },
+  {
+    "theme": "Neon",
+    "class": "dyvix-select-neon",
+    "input-class": "dyvix-select-input-neon",
+    "dropdown-class": "dyvix-select-dropdown-neon",
+    "default-animation": "pulse"
   }
 ]
