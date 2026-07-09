@@ -12,5 +12,12 @@
     "input-class": "dyvix-select-input-industrial",
     "dropdown-class": "dyvix-select-dropdown-industrial",
     "default-animation": "fade"
+  },
+  {
+    "theme": "Aurora",
+    "class": "dyvix-select-aurora",
+    "input-class": "dyvix-select-input-aurora",
+    "dropdown-class": "dyvix-select-dropdown-aurora",
+    "default-animation": "aurora"
   }
 ]
