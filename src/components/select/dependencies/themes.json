@@ -14,6 +14,13 @@
     "default-animation": "fade"
   },
   {
+    "theme": "Blade",
+    "class": "dyvix-select-blade",
+    "input-class": "dyvix-select-input-blade",
+    "dropdown-class": "dyvix-select-dropdown-blade",
+    "default-animation": "drift"
+  },
+  {
     "theme": "Ember",
     "class": "dyvix-select-ember",
     "input-class": "dyvix-select-input-ember",
