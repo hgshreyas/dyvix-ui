@@ -15,7 +15,7 @@ import Version from '../../../package.json';
  * @param {Function} [props.onChange] - Callback triggered when selection changes
  * @param {('select'|'autocomplete')} [props.type='select'] - Select behavior type
  * @param {string} [props.animation='fade'] - Animation name for the select
- * @param {string} [props.theme='!/'] - Select theme configuration
+ * @param {('Singularity'|'Industrial'|'Blade'|'Ember'|'Neon')} [props.theme] - Select theme configuration
  * @param {string} [props.background] - Background color of the input field
  * @param {string} [props.dropdownBackground] - Background color of the dropdown
  * @param {string} [props.className] - Custom CSS class for the select wrapper
