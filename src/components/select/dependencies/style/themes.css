@@ -58,36 +58,31 @@
   background: #0a1429;
 }
 /* Blade Theme */
-.dyvix-select-blade .dyvix-select-input-blade {
-  font-family: 'Geist';
-  border: 2px solid #374151;
-  border-radius: 8px;
-  background-color: #0a1429;
-  padding: 0.75rem;
-  color: #ffffff;
+.dyvix-modal-blade {
+  background-color: #0a0a0a;
+  border-radius: 0px;
+  border-left: 3px solid #e2e8f0;
+  border-top: 3px solid #e2e8f0;
+  border-right: 1px solid #ffffff20;
+  border-bottom: 1px solid #ffffff20;
+  box-shadow: -4px -4px 20px rgba(255, 255, 255, 0.05);
+  -webkit-box-shadow: -4px -4px 20px rgba(255, 255, 255, 0.05);
+  -moz-box-shadow: -4px -4px 20px rgba(255, 255, 255, 0.05);
   transition:
-    box-shadow ease-in-out 0.4s,
-    border-color ease-in-out 0.3s,
-    background-color ease-in-out 0.2s;
+    border-left 0.1s ease-in-out,
+    border-top 0.1s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    -webkit-box-shadow 0.2s ease-in-out,
+    -moz-box-shadow 0.2s ease-in-out;
 }
-.dyvix-select-blade .dyvix-select-input-blade:hover {
-  border-color: #6a6a6a;
-  background-color: #101f39;
-}
-.dyvix-select-blade .dyvix-select-dropdown-blade {
-  margin-top: 0.5rem;
-  border: 1px solid #374151;
-  border-radius: 8px;
-  background-color: #0a1429;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-  padding: 0.5rem;
+.dyvix-modal-blade:hover {
+  border-left: 4px solid #ffffff;
+  border-top: 4px solid #ffffff;
+  box-shadow: -6px -6px 30px rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: -6px -6px 30px rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: -6px -6px 30px rgba(255, 255, 255, 0.1);
 }
 
-.dyvix-select-blade .dyvix-select-dropdown-blade li:hover {
-  background: rgba(255, 69, 0, 0.15);
-  color: #ffffff;
-  cursor: pointer;
-}
 /* Ember Theme */
 .dyvix-select-ember .dyvix-select-input-ember {
   background: #0f0a08;
