@@ -15,6 +15,7 @@ export const DYVIX_GLOBAL_THEME =
   "MIDNIGHT": "Midnight",
   "CRIMSON": "Crimson",
   "OBSIDIAN": "Obsidian",
+  "COFFEE": "Coffee",
   "COSMOS": "Cosmos"
 }
 export const DYVIX_MODAL_TYPE = 

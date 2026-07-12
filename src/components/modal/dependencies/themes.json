@@ -78,9 +78,15 @@
     "radiused": false
   },
   {
-  "theme": "Cosmos",
-  "class": "dyvix-modal-cosmos",
-  "default-animation": "drift",
-  "radiused": false
+    "theme": "Coffee",
+    "class": "dyvix-modal-coffee",
+    "default-animation": "fade",
+    "radiused": false
+  },
+  {
+    "theme": "Cosmos",
+    "class": "dyvix-modal-cosmos",
+    "default-animation": "drift",
+    "radiused": false
   }
 ]
