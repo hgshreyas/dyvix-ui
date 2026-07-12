@@ -54,5 +54,9 @@
   {
     "theme": "Coffee",
     "default-animation": "fade"
+  },
+  {
+    "theme": "Cosmos",
+    "default-animation": "drift"
   }
 ]
