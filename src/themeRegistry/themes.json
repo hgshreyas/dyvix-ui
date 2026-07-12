@@ -50,5 +50,9 @@
   {
     "theme": "Obsidian",
     "default-animation": "fade"
+  },
+  {
+    "theme": "Coffee",
+    "default-animation": "fade"
   }
 ]
