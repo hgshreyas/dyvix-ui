@@ -76,5 +76,11 @@
     "class": "dyvix-modal-obsidian",
     "default-animation": "fade",
     "radiused": false
-  }
+  },
+  {
+  "theme": "Cosmos",
+  "class": "dyvix-modal-cosmos",
+  "default-animation": "drift",
+  "radiused": false
+}
 ]
