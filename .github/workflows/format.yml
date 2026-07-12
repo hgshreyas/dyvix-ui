@@ -18,7 +18,4 @@ jobs:
         run: npm ci
 
       - name: Run Format
-        run: npm run format
-
-      - name: Check for unformatted files
-        run: git diff --exit-code
+        run: npx prettier --check . --ignore-path .gitignore
