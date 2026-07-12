@@ -1,24 +1,20 @@
 name: Dyvix Quality check
 on:
   pull_request:
-      branches: [main]
+    branches: [main]
 jobs:
   format:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
-
-      - name: Node install
-        uses: actions/setup-node@v4
         with:
-          node-version: '24.16.0'
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run Format
-        run: npm run format
-
-      - name: Check for unformatted files
-        run: git diff --exit-code
+          ref: ${{ github.head_ref }}
+      - name: Run Prettier Format Suggestions
+        uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: --write . --ignore-path .gitignore
+          only_changed: true
+          dry: false
