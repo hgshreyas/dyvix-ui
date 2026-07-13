@@ -416,17 +416,8 @@
 }
 .dyvix-button-coffee {
   background:
-    radial-gradient(
-    circle at top,
-    rgba(255,245,225,.18),
-    transparent 45%
-  ),
-  linear-gradient(
-    135deg,
-    #2d1b14,
-    #5b3928 45%,
-    #8d6243 100%
-  );
+    radial-gradient(circle at top, rgba(255, 245, 225, 0.18), transparent 45%),
+    linear-gradient(135deg, #2d1b14, #5b3928 45%, #8d6243 100%);
 
   border: 2px solid #d2a679;
   border-radius: 2rem;
@@ -436,23 +427,23 @@
     0 0 45px rgba(155, 100, 55, 0.45);
 
   transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    border-color .35s ease;
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .dyvix-button-coffee:hover {
   transform: translateY(-3px);
   border-color: #f3c88c;
   box-shadow:
-    inset 0 0 35px rgba(255,245,235,.12),
-    0 0 70px rgba(205,140,75,.6);
+    inset 0 0 35px rgba(255, 245, 235, 0.12),
+    0 0 70px rgba(205, 140, 75, 0.6);
 }
 
 .dyvix-button-coffee:active {
   transform: scale(0.95);
   border-color: #b8926a;
   box-shadow:
-    inset 0 0 45px rgba(255,245,235,.15),
+    inset 0 0 45px rgba(255, 245, 235, 0.15),
     0 0 30px rgba(155, 100, 55, 0.3);
 }

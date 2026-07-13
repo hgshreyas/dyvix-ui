@@ -214,7 +214,7 @@ export function validateElements(elements) {
 
       // special case
       if (element.type === 'radio') {
-        if(element.amount !== 1) {
+        if (element.amount !== 1) {
           return {
             status: GuardStatus.Error,
             error: `Radio element can only have 1 amount per row.`
@@ -267,11 +267,9 @@ export function validateElements(elements) {
         };
       }
     } else {
-      if (
-        !(
-          Array.isArray(element.placeholder) && element.placeholder.length === 1
-        )
-      ) {
+      if (!(
+        Array.isArray(element.placeholder) && element.placeholder.length === 1
+      )) {
         return {
           status: GuardStatus.Error,
           error:
@@ -358,7 +356,12 @@ export function normalizeElements(elements) {
     id: typeof ele.id === 'string' ? [ele.id] : ele.id,
     validation:
       typeof ele.validation === 'string' ? [ele.validation] : ele.validation,
-    match: typeof ele.match === 'string' ? [ele.match] : ele.match
+    match:
+      ele.match === '!/' || !ele.match
+        ? null
+        : typeof ele.match === 'string'
+          ? [ele.match]
+          : ele.match
   }));
 }
 function checkDuplicates(elements, field) {
