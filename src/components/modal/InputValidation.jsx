@@ -179,6 +179,13 @@ export async function ValidateInput(
 export function validateElements(elements) {
   const MAX_ROWS = 9;
 
+  if (!elements) {
+    return {
+      status: GuardStatus.Error,
+      error: 'Element prop is required.'
+    };
+  }
+
   if (elements?.length > MAX_ROWS) {
     console.warn(
       `[Dyvix UI] Maximum of ${MAX_ROWS} rows allowed. Extra rows will be ignored.`
@@ -203,6 +210,23 @@ export function validateElements(elements) {
           status: GuardStatus.Error,
           error: `Field '${element.name}' requires an options array.`
         };
+      }
+
+      // special case
+      if (element.type === 'radio') {
+        if(element.amount !== 1) {
+          return {
+            status: GuardStatus.Error,
+            error: `Radio element can only have 1 amount per row.`
+          };
+        }
+
+        if (element.options.length > 5) {
+          return {
+            status: GuardStatus.Error,
+            error: `Radio group '${element.name}' exceeds the 5-option limit to prevent layout clipping.`
+          };
+        }
       }
 
       if (
