@@ -1,0 +1,20 @@
+name: Dyvix Quality check
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Run Prettier Format Suggestions
+        uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: --write . --ignore-path .gitignore
+          only_changed: true
+          dry: false

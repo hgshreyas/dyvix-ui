@@ -1,62 +1,62 @@
 [
   {
     "theme": "Singularity",
-    "class": "dyvix-input-singularity",
     "default-animation": "bubble"
   },
   {
     "theme": "Industrial",
-    "class": "dyvix-input-industrial",
     "default-animation": "fade"
   },
   {
     "theme": "Ember",
-    "class": "dyvix-input-ember",
     "default-animation": "glitch"
   },
   {
     "theme": "Frost",
-    "class": "dyvix-input-frost",
     "default-animation": "unfold"
   },
   {
     "theme": "Blade",
-    "class": "dyvix-input-blade",
     "default-animation": "zoom"
   },
   {
     "theme": "Neon",
-    "class": "dyvix-input-neon",
     "default-animation": "pulse"
   },
   {
     "theme": "Aurora",
-    "class": "dyvix-input-aurora",
     "default-animation": "aurora"
   },
   {
     "theme": "Sunset",
-    "class": "dyvix-input-sunset",
     "default-animation": "drop"
   },
   {
     "theme": "Ocean",
-    "class": "dyvix-input-ocean",
     "default-animation": "flip"
   },
   {
     "theme": "Forest",
-    "class": "dyvix-input-forest",
     "default-animation": "glide"
   },
   {
     "theme": "Midnight",
-    "class": "dyvix-input-midnight",
     "default-animation": "drift"
   },
   {
     "theme": "Crimson",
-    "class": "dyvix-input-crimson",
     "default-animation": "float"
+  },
+  {
+    "theme": "Obsidian",
+    "default-animation": "fade"
+  },
+  {
+    "theme": "Coffee",
+    "default-animation": "fade"
+  },
+  {
+    "theme": "Cosmos",
+    "default-animation": "drift"
   }
 ]

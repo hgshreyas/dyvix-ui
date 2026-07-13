@@ -1,9 +1,37 @@
 [
   {
     "theme": "Singularity",
-    "class": "dyvix-select-lens",
-    "input-class": "dyvix-select-input-lens",
-    "dropdown-class": "dyvix-select-dropdown-lens",
+    "class": "dyvix-select-singularity",
+    "input-class": "dyvix-select-input-singularity",
+    "dropdown-class": "dyvix-select-dropdown-singularity",
     "default-animation": "bubble"
+  },
+  {
+    "theme": "Industrial",
+    "class": "dyvix-select-industrial",
+    "input-class": "dyvix-select-input-industrial",
+    "dropdown-class": "dyvix-select-dropdown-industrial",
+    "default-animation": "fade"
+  },
+  {
+    "theme": "Blade",
+    "class": "dyvix-select-blade",
+    "input-class": "dyvix-select-input-blade",
+    "dropdown-class": "dyvix-select-dropdown-blade",
+    "default-animation": "drift"
+  },
+  {
+    "theme": "Ember",
+    "class": "dyvix-select-ember",
+    "input-class": "dyvix-select-input-ember",
+    "dropdown-class": "dyvix-select-dropdown-ember",
+    "default-animation": "glitch"
+  },
+  {
+    "theme": "Neon",
+    "class": "dyvix-select-neon",
+    "input-class": "dyvix-select-input-neon",
+    "dropdown-class": "dyvix-select-dropdown-neon",
+    "default-animation": "pulse"
   }
 ]

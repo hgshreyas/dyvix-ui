@@ -1,7 +1,7 @@
 [
   {
     "theme": "Singularity",
-    "class": "dyvix-label-lens",
+    "class": "dyvix-label-singularity",
     "default-animation": "bubble"
   },
   {
@@ -53,5 +53,15 @@
     "theme": "Aurora",
     "class": "dyvix-label-aurora",
     "default-animation": "aurora"
+  },
+  {
+    "theme": "Obsidian",
+    "class": "dyvix-label-obsidian",
+    "default-animation": "fade"
+  },
+  {
+    "theme": "Sunset",
+    "class": "dyvix-label-sunset",
+    "default-animation": "sunset"
   }
 ]

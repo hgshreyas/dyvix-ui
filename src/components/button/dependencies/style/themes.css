@@ -1,4 +1,4 @@
-.dyvix-button-lens {
+.dyvix-button-singularity {
   background: radial-gradient(circle, #000000 0%, #1a1a1a 100%);
   box-shadow: 0 0 30px #b903e2;
   -webkit-box-shadow: 0 0 30px #b903e2;
@@ -7,11 +7,11 @@
   border-radius: 10rem;
   transition: all 0.3s ease-in-out;
 }
-.dyvix-button-lens:hover {
+.dyvix-button-singularity:hover {
   border: #000000 3px double;
   transform: scale(1.09);
 }
-.dyvix-button-lens:active {
+.dyvix-button-singularity:active {
   border: #000000 5px double;
   transform: scale(1.09);
 }
@@ -20,7 +20,6 @@
   border: 4px solid #374151;
   border-radius: 10px;
   background-color: #0a1429;
-  padding: 0.6rem;
   transition:
     box-shadow ease-in-out 0.6s,
     border-color ease-in-out 0.3s,
@@ -414,4 +413,46 @@
   background: #140000;
   border-color: #ff8080;
   box-shadow: 0 0 14px rgba(255, 77, 77, 0.3);
+}
+.dyvix-button-coffee {
+  background:
+    radial-gradient(
+    circle at top,
+    rgba(255,245,225,.18),
+    transparent 45%
+  ),
+  linear-gradient(
+    135deg,
+    #2d1b14,
+    #5b3928 45%,
+    #8d6243 100%
+  );
+
+  border: 2px solid #d2a679;
+  border-radius: 2rem;
+
+  box-shadow:
+    inset 0 0 30px rgba(255, 244, 230, 0.08),
+    0 0 45px rgba(155, 100, 55, 0.45);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.dyvix-button-coffee:hover {
+  transform: translateY(-3px);
+  border-color: #f3c88c;
+  box-shadow:
+    inset 0 0 35px rgba(255,245,235,.12),
+    0 0 70px rgba(205,140,75,.6);
+}
+
+.dyvix-button-coffee:active {
+  transform: scale(0.95);
+  border-color: #b8926a;
+  box-shadow:
+    inset 0 0 45px rgba(255,245,235,.15),
+    0 0 30px rgba(155, 100, 55, 0.3);
 }

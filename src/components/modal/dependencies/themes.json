@@ -1,7 +1,7 @@
 [
   {
     "theme": "Singularity",
-    "class": "dyvix-modal-lens",
+    "class": "dyvix-modal-singularity",
     "default-animation": "bubble",
     "radiused": true
   },
@@ -69,6 +69,24 @@
     "theme": "Crimson",
     "class": "dyvix-modal-crimson",
     "default-animation": "float",
+    "radiused": false
+  },
+  {
+    "theme": "Obsidian",
+    "class": "dyvix-modal-obsidian",
+    "default-animation": "fade",
+    "radiused": false
+  },
+  {
+    "theme": "Coffee",
+    "class": "dyvix-modal-coffee",
+    "default-animation": "fade",
+    "radiused": false
+  },
+  {
+    "theme": "Cosmos",
+    "class": "dyvix-modal-cosmos",
+    "default-animation": "drift",
     "radiused": false
   }
 ]
