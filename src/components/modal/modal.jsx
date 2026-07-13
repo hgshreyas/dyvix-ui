@@ -193,7 +193,8 @@ function Modal({
   // text row height seem to be suitable for other elements
   // Add more mapping keys if other elements started spacing weird
   const ROW_HEIGHT = {
-    text: 56
+    text: 56,
+    radio: 65
   };
   const ROW_GAP = 25;
   const BASEHEIGHT = 200; // Ceiling space + Floor space combined
