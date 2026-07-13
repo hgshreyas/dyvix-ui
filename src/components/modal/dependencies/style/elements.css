@@ -190,6 +190,34 @@
   gap: 0.5rem;
   cursor: pointer;
 }
+.modal-radio-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 0px;
+  column-gap: 0.2rem;
+  width: 100%;
+  max-height: 65px;
+  align-items: center;
+  overflow: hidden;
+}
+.modal-radio-legend {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-right: 0.2rem;
+}
+.modal-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.modal-radio {
+  accent-color: #0ea5e9;
+  cursor: pointer;
+}
 .modal-textarea {
   max-height: 70px;
   min-height: 35px;

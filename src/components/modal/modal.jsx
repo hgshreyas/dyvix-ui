@@ -26,6 +26,7 @@ import DyvixButton from '../button/button';
 import DyvixFile from '../file/file';
 import DyvixInput from '../input/input';
 import { values } from 'idb-keyval';
+import DyvixLabel from '../label/label';
 
 export const validType = typesData.map((e) => e.type);
 export const validRules = validationData.map((e) => e.preset);
@@ -192,7 +193,8 @@ function Modal({
   // text row height seem to be suitable for other elements
   // Add more mapping keys if other elements started spacing weird
   const ROW_HEIGHT = {
-    text: 56
+    text: 56,
+    radio: 65
   };
   const ROW_GAP = 25;
   const BASEHEIGHT = 200; // Ceiling space + Floor space combined
@@ -399,12 +401,11 @@ function Modal({
                       ariaAttributes['aria-required'] =
                         ariaProps['aria-required'];
                     }
-                    const options =
-                      Tag === 'select' || elementDef.tag === 'DyvixSelect'
-                        ? Array.isArray(field.options[0])
-                          ? field.options[j]
-                          : field.options
-                        : [];
+                    const options = elementDef['requires-options']
+                      ? Array.isArray(field.options[0])
+                        ? field.options[j]
+                        : field.options
+                      : [];
                     const fieldError = errors[name];
                     const ErrorId =
                       `${id && id !== '!/' ? id : field.placeholder[j]}-error`
@@ -485,6 +486,36 @@ function Modal({
                               </option>
                             ))}
                           </Tag>
+                        ) : field.type === 'radio' ? (
+                          <div
+                            key={j}
+                            className="modal-radio-group"
+                            role="radiogroup"
+                            aria-label={field.placeholder?.[j]}
+                            style={themeTextStyle}
+                          >
+                            {field.placeholder?.[j] &&
+                              field.placeholder[j] !== '!/' && (
+                                <DyvixLabel className="modal-radio-legend" animation={null} theme={theme}>
+                                  {field.placeholder[j]}
+                                </DyvixLabel>
+                              )}
+                            {options.map((opt, index) => (
+                              <DyvixLabel key={index} className="modal-radio-label" animation={null} theme={theme}>
+                                <input
+                                  type="radio"
+                                  className="modal-radio"
+                                  name={name}
+                                  value={opt}
+                                  checked={data[name] === opt}
+                                  onChange={() => handleInputChange(name, opt)}
+                                  {...(id &&
+                                    id !== '!/' && { id: `${id}-${index}` })}
+                                />
+                                {opt}
+                              </DyvixLabel>
+                            ))}
+                          </div>
                         ) : field.type === 'checkbox' ? (
                           <label
                             key={j}
