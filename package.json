@@ -1,8 +1,8 @@
 {
   "name": "dyvix-ui",
   "sideEffects": [
-      "**/*.css",
-      "**/*.json"
+    "**/*.css",
+    "**/*.json"
   ],
   "version": "0.3.7",
   "description": "Dyvix is an open source, modern, config-driven, animated component UI library. Beautiful by default, customizable by design.",

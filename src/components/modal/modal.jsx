@@ -95,7 +95,7 @@ function Modal({
   function handleValidation(data) {
     const newErrors = {};
     for (const field of fields) {
-      if (Array.isArray(field.match)) {
+      if (Array.isArray(field.match) && field.match !== undefined) {
         for (const [i, matchTo] of field.match.entries()) {
           if (matchTo) {
             const matchToFields = fields.find((f) => f.id.includes(matchTo));
@@ -496,12 +496,21 @@ function Modal({
                           >
                             {field.placeholder?.[j] &&
                               field.placeholder[j] !== '!/' && (
-                                <DyvixLabel className="modal-radio-legend" animation={null} theme={theme}>
+                                <DyvixLabel
+                                  className="modal-radio-legend"
+                                  animation={null}
+                                  theme={theme}
+                                >
                                   {field.placeholder[j]}
                                 </DyvixLabel>
                               )}
                             {options.map((opt, index) => (
-                              <DyvixLabel key={index} className="modal-radio-label" animation={null} theme={theme}>
+                              <DyvixLabel
+                                key={index}
+                                className="modal-radio-label"
+                                animation={null}
+                                theme={theme}
+                              >
                                 <input
                                   type="radio"
                                   className="modal-radio"
