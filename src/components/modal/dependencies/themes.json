@@ -93,6 +93,6 @@
     "theme": "Sakura",
     "class": "dyvix-modal-sakura",
     "default-animation": "unfold",
-    "radiused": true
+    "radiused": false
   }
 ]
