@@ -79,7 +79,9 @@ Open an issue with:
 1. Treat the community with respect.
 2. Follow existing code style.
 3. Test your changes before making a pr.
-4. Reference the related issue if it fixes an existing issue
+4. Reference the related issue if it fixes an existing issue.
+5. Avoid opening more than 3-4 PRs at a time unless they are small and focused. Wait for a review before opening additional PRs, a large number of concurrent PRs makes review difficult and slows down maintenance for everyone.
+6. Respect PR assignments. First to comment or open a PR gets priority.
 
 ## Project Structure
 
