@@ -88,5 +88,11 @@
     "class": "dyvix-modal-cosmos",
     "default-animation": "drift",
     "radiused": false
+  },
+  {
+    "theme": "Volcanic",
+    "class": "dyvix-modal-volcanic",
+    "default-animation": "swing",
+    "radiused": false
   }
 ]

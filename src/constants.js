@@ -15,7 +15,8 @@ export const DYVIX_GLOBAL_THEME = {
   CRIMSON: 'Crimson',
   OBSIDIAN: 'Obsidian',
   COFFEE: 'Coffee',
-  COSMOS: 'Cosmos'
+  COSMOS: 'Cosmos',
+  VOLCANIC: 'Volcanic'
 };
 export const DYVIX_MODAL_TYPE = {
   AUTH: 'auth',
