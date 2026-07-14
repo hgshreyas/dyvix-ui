@@ -16,6 +16,7 @@ export const DYVIX_GLOBAL_THEME = {
   OBSIDIAN: 'Obsidian',
   COFFEE: 'Coffee',
   COSMOS: 'Cosmos',
+  SAKURA: 'Sakura',
   VOLCANIC: 'Volcanic'
 };
 export const DYVIX_MODAL_TYPE = {
@@ -35,7 +36,10 @@ export const DYVIX_GLOBAL_ANIMATION = {
   GLIDE: 'glide',
   DRIFT: 'drift',
   FLOAT: 'float',
-  SWING: 'swing'
+  SWING: 'swing',
+  SLIDERIGHT: 'slideRight',
+  SPIRAL: 'spiral',
+  BOUNCE: 'bounce'
 };
 export const DYVIX_MODAL_VALIDATION_PRESET = {
   EMAIL: 'email',

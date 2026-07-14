@@ -58,6 +58,10 @@
   {
     "theme": "Cosmos",
     "default-animation": "drift"
+  }
+  {
+    "theme": "Sakura",
+    "default-animation": "unfold"
   },
   {
     "theme": "Volcanic",

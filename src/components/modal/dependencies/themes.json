@@ -90,6 +90,12 @@
     "radiused": false
   },
   {
+    "theme": "Sakura",
+    "class": "dyvix-modal-sakura",
+    "default-animation": "unfold",
+    "radiused": false
+  },
+  {
     "theme": "Volcanic",
     "class": "dyvix-modal-volcanic",
     "default-animation": "swing",
