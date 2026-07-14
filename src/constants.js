@@ -16,7 +16,8 @@ export const DYVIX_GLOBAL_THEME = {
   OBSIDIAN: 'Obsidian',
   COFFEE: 'Coffee',
   COSMOS: 'Cosmos',
-  SAKURA: 'Sakura'
+  SAKURA: 'Sakura',
+  VOLCANIC: 'Volcanic'
 };
 export const DYVIX_MODAL_TYPE = {
   AUTH: 'auth',
