@@ -33,5 +33,12 @@
     "input-class": "dyvix-select-input-neon",
     "dropdown-class": "dyvix-select-dropdown-neon",
     "default-animation": "pulse"
-  }
+  },
+  {
+  "theme": "Ocean",
+  "class": "dyvix-select-ocean",
+  "input-class": "dyvix-select-input-ocean",
+  "dropdown-class": "dyvix-select-dropdown-ocean",
+  "default-animation": "flip"
+}
 ]
