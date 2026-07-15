@@ -1,20 +1,21 @@
-name: Dyvix Quality check
+name: Dyvix Quality Check
 on:
-  pull_request:
+  pull_request_target:
+    branches: [main]
 permissions:
   contents: read
   pull-requests: write
-
 jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
       - name: Format
-        id: format
         run: npx prettier@latest --write . --ignore-path .gitignore
       - name: Check for formatting changes
         id: diff
@@ -24,20 +25,13 @@ jobs:
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
-      - name: Generate token
-        id: generate-token
-        uses: actions/create-github-app-token@v2
-        with:
-          app-id: ${{ vars.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
-
       - uses: parkerbxyz/suggest-changes@v3
         if: steps.diff.outputs.changed == 'true'
         with:
-          token: ${{ steps.generate-token.outputs.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           comment: 'Prettier found some formatting issues! Click below to apply the fixes directly.'
           event: 'REQUEST_CHANGES'
-      - name: Fail if something is required
+      - name: Fail if formatting required
         if: steps.diff.outputs.changed == 'true'
         run: |
           echo "Formatting changes are required."
