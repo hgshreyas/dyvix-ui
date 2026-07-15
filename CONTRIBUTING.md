@@ -87,10 +87,22 @@ Open an issue with:
 
 ```bash
 src/
-  components/
-    modal/         # Modal component
-    select/        # Select engine
-  static/          # Assets
-docs/              # Dyvix documentation
-dev-engine/        # Automated dev env engine
+  components/       # UI components
+    button/         # Button component
+    file/           # File component
+    input/          # Input component
+    label/          # Label component
+    modal/          # Modal component
+    select/         # Select engine
+    table/          # Table component
+    toast/          # Toast component
+    animations.json # Animation definitions
+  themeRegistry/    # Theme definitions (themes.json)
+  utils/            # Shared utilities & SJC
+  static/           # Assets (logo, demo media)
+  constants.js      # Shared constants
+  index.jsx         # Package entry point
+docs/               # VitePress documentation site
+dev-engine/         # Automated dev/build engine
+devbench/           # Dev bench tooling
 ```
