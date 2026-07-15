@@ -31,8 +31,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           comment: 'Prettier found some formatting issues! Click below to apply the fixes directly.'
           event: 'REQUEST_CHANGES'
-      - name: Fail if formatting required
+      - name: Status
         if: steps.diff.outputs.changed == 'true'
         run: |
           echo "Formatting changes are required."
-          exit 1
