@@ -92,9 +92,11 @@ src/
     label/          # Label component
     modal/          # Modal component
     select/         # Select engine
+    table/          # Table component
+    toast/          # Toast component
     animations.json # Animation definitions
   themeRegistry/    # Theme definitions (themes.json)
-  utils/            # Shared utilities
+  utils/            # Shared utilities & SJC
   static/           # Assets (logo, demo media)
   constants.js      # Shared constants
   index.jsx         # Package entry point
