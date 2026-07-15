@@ -220,7 +220,7 @@
 
 .dyvix-select-sunset .dyvix-select-input-sunset:hover {
   transform: translateY(2px);
-  box-shadow: 0 20px 50px -10px rgba(255, 198, 15, 0.6);
+  box-shadow: 0px 10px 30px -10px rgba(255, 198, 15, 0.7);
   border-radius: 15px;
 }
 
@@ -253,6 +253,7 @@
 
 .dyvix-select-sunset .dyvix-select-dropdown-sunset li {
   color: #ffffff;
+  transition: background 0.2s ease;
 }
 
 .dyvix-select-sunset .dyvix-select-dropdown-sunset li:hover {
