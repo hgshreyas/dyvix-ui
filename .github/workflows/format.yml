@@ -21,4 +21,4 @@ jobs:
         uses: parkerbxyz/suggest-changes@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          comment: "Prettier found some formatting issues! Click below to apply the fixes directly."
+          comment: 'Prettier found some formatting issues! Click below to apply the fixes directly.'
