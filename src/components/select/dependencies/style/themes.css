@@ -235,13 +235,7 @@
 .dyvix-select-sunset .dyvix-select-dropdown-sunset {
   background: var(
     --dyvix-select-dropdown-color,
-    linear-gradient(
-      135deg,
-      #1a0a00 0%,
-      #3d1a00 40%,
-      #6b2d00 70%,
-      #8b3a00 100%
-    )
+    linear-gradient(135deg, #1a0a00 0%, #3d1a00 40%, #6b2d00 70%, #8b3a00 100%)
   );
   border: 1px solid rgba(255, 198, 15, 0.2);
   border-radius: 12px;

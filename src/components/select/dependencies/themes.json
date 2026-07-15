@@ -35,10 +35,10 @@
     "default-animation": "pulse"
   },
   {
-  "theme": "Sunset",
-  "class": "dyvix-select-sunset",
-  "input-class": "dyvix-select-input-sunset",
-  "dropdown-class": "dyvix-select-dropdown-sunset",
-  "default-animation": "drop"
-}
+    "theme": "Sunset",
+    "class": "dyvix-select-sunset",
+    "input-class": "dyvix-select-input-sunset",
+    "dropdown-class": "dyvix-select-dropdown-sunset",
+    "default-animation": "drop"
+  }
 ]
