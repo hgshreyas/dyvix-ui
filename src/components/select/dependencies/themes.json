@@ -40,5 +40,12 @@
     "input-class": "dyvix-select-input-sunset",
     "dropdown-class": "dyvix-select-dropdown-sunset",
     "default-animation": "drop"
+  },
+  {
+    "theme": "Forest",
+    "class": "dyvix-select-forest",
+    "input-class": "dyvix-select-input-forest",
+    "dropdown-class": "dyvix-select-dropdown-forest",
+    "default-animation": "glide"
   }
 ]
