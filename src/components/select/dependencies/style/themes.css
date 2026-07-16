@@ -385,3 +385,44 @@
 .dyvix-select-forest .dyvix-select-dropdown-forest::-webkit-scrollbar-thumb {
   background: rgba(163, 236, 101, 0.6);
 }
+/* Midnight Theme */
+
+.dyvix-select-midnight .dyvix-select-input-midnight {
+  background: radial-gradient(circle at center, #00024d 0%, #000000 100%);
+  border: 1px solid rgba(112, 168, 247, 0.3);
+  border-radius: 3.67rem;
+  color: #ffffff;
+  box-shadow:
+    0 0 20px rgba(99, 102, 241, 0.2),
+    inset 0 0 10px rgba(112, 168, 247, 0.1);
+  transition: all 0.5s cubic-bezier(0.17, 0.88, 0.3, 1.67);
+}
+
+.dyvix-select-midnight .dyvix-select-input-midnight:hover {
+  background: radial-gradient(circle at 40% 40%, #000375 0%, #000000 100%);
+  border-color: rgba(112, 168, 247, 0.6);
+}
+
+.dyvix-select-midnight .dyvix-select-dropdown-midnight {
+  background: var(
+    --dyvix-select-dropdown-color,
+    radial-gradient(circle at center, #00024d 0%, #000000 100%)
+  );
+  border: 1px solid rgba(112, 168, 247, 0.3);
+
+  --dyvix-select-active-bg: #6366f1;
+  --dyvix-select-active-text: #ffffff;
+}
+
+.dyvix-select-midnight .dyvix-select-dropdown-midnight li {
+  color: #ffffff;
+}
+
+.dyvix-select-midnight .dyvix-select-dropdown-midnight li:hover {
+  background: rgba(99, 102, 241, 0.2);
+}
+
+.dyvix-select-midnight
+  .dyvix-select-dropdown-midnight::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.6);
+}

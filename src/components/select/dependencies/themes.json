@@ -54,5 +54,12 @@
     "input-class": "dyvix-select-input-forest",
     "dropdown-class": "dyvix-select-dropdown-forest",
     "default-animation": "glide"
+  },
+  {
+    "theme": "Midnight",
+    "class": "dyvix-select-midnight",
+    "input-class": "dyvix-select-input-midnight",
+    "dropdown-class": "dyvix-select-dropdown-midnight",
+    "default-animation": "drift"
   }
 ]
