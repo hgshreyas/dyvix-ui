@@ -8,7 +8,7 @@ export function SelectTest() {
   return (
     <DyvixSelect
       animation={DYVIX_GLOBAL_ANIMATION.GLITCH}
-      theme="Blade"
+      theme={DYVIX_GLOBAL_THEME.MIDNIGHT}
       placeholder={'number'}
       className="ex-select"
       type="select"
