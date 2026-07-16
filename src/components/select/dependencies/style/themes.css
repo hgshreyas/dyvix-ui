@@ -422,6 +422,6 @@
   background: rgba(99, 102, 241, 0.2);
 }
 
-.dyvix-select-midnight.dyvix-select-dropdown-midnight::-webkit-scrollbar-thumb {
+.dyvix-select-midnight .dyvix-select-dropdown-midnight::-webkit-scrollbar-thumb {
   background: rgba(99, 102, 241, 0.6);
 }
