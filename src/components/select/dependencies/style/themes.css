@@ -257,3 +257,68 @@
 .dyvix-select-sunset .dyvix-select-dropdown-sunset::-webkit-scrollbar-thumb {
   background: rgba(255, 198, 15, 0.6);
 }
+
+/* ===========================
+   Ocean Theme
+=========================== */
+
+.dyvix-select-ocean .dyvix-select-input-ocean {
+  background: linear-gradient(200deg, #001220, #023862);
+  border: 2px solid rgba(0, 150, 255, 0.3);
+  border-radius: 2rem;
+  box-shadow:
+    0 0 50px rgba(0, 100, 255, 0.15),
+    inset 0 0 30px rgba(0, 150, 255, 0.05);
+  transition:
+    transform 0.35s ease-in-out,
+    box-shadow 0.3s ease-in-out,
+    border-color 0.25s ease-in-out,
+    background 0.35s ease-in-out;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dyvix-select-ocean .dyvix-select-input-ocean:hover {
+  background: linear-gradient(
+    135deg,
+    #04243a 0%,
+    #065f86 40%,
+    #0ea5e9 75%,
+    #67e8f9 100%
+  );
+  border-color: rgba(186, 230, 253, 0.85);
+  transform: translateY(-1px) scale(1.01);
+  box-shadow:
+    0 0 70px rgba(0, 100, 255, 0.25),
+    inset 0 0 40px rgba(0, 150, 255, 0.08);
+}
+
+.dyvix-select-ocean .dyvix-select-input-ocean:focus {
+  border-color: rgba(0, 150, 255, 0.6);
+  box-shadow:
+    0 0 12px rgba(0, 150, 255, 0.25),
+    inset 0 0 20px rgba(0, 150, 255, 0.05);
+}
+
+.dyvix-select-ocean .dyvix-select-dropdown-ocean {
+  background: linear-gradient(200deg, #001220, #023862);
+  border: 2px solid rgba(0, 150, 255, 0.3);
+  color: #ffffff;
+  border-radius: 1rem;
+  box-shadow:
+    0 0 30px rgba(0, 100, 255, 0.15),
+    inset 0 0 20px rgba(0, 150, 255, 0.05);
+}
+
+.dyvix-select-ocean .dyvix-select-dropdown-ocean li {
+  color: #ffffff;
+}
+
+.dyvix-select-ocean .dyvix-select-dropdown-ocean li:hover {
+  background: rgba(0, 150, 255, 0.25);
+  color: #e0f0ff;
+}
+
+.dyvix-select-ocean .dyvix-select-dropdown-ocean li:active {
+  background: rgba(0, 150, 255, 0.3);
+}

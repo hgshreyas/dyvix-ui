@@ -40,5 +40,12 @@
     "input-class": "dyvix-select-input-sunset",
     "dropdown-class": "dyvix-select-dropdown-sunset",
     "default-animation": "drop"
+  },
+  {
+    "theme": "Ocean",
+    "class": "dyvix-select-ocean",
+    "input-class": "dyvix-select-input-ocean",
+    "dropdown-class": "dyvix-select-dropdown-ocean",
+    "default-animation": "flip"
   }
 ]
