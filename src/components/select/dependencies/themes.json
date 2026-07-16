@@ -7,7 +7,6 @@
     "default-animation": "bubble"
   },
   {
-<<<<<<< HEAD
     "theme": "Industrial",
     "class": "dyvix-select-industrial",
     "input-class": "dyvix-select-input-industrial",
@@ -36,19 +35,17 @@
     "default-animation": "pulse"
   },
   {
-  "theme": "Ocean",
-  "class": "dyvix-select-ocean",
-  "input-class": "dyvix-select-input-ocean",
-  "dropdown-class": "dyvix-select-dropdown-ocean",
-  "default-animation": "flip"
-}
-]
-=======
+    "theme": "Sunset",
+    "class": "dyvix-select-sunset",
+    "input-class": "dyvix-select-input-sunset",
+    "dropdown-class": "dyvix-select-dropdown-sunset",
+    "default-animation": "drop"
+  },
+  {
     "theme": "Ocean",
     "class": "dyvix-select-ocean",
     "input-class": "dyvix-select-input-ocean",
     "dropdown-class": "dyvix-select-dropdown-ocean",
     "default-animation": "flip"
-  }
+  } 
 ]
->>>>>>> 28fcee7 (feat(select): add Ocean global theme support)
