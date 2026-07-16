@@ -7,6 +7,7 @@
     "default-animation": "bubble"
   },
   {
+<<<<<<< HEAD
     "theme": "Industrial",
     "class": "dyvix-select-industrial",
     "input-class": "dyvix-select-input-industrial",
@@ -42,3 +43,12 @@
   "default-animation": "flip"
 }
 ]
+=======
+    "theme": "Ocean",
+    "class": "dyvix-select-ocean",
+    "input-class": "dyvix-select-input-ocean",
+    "dropdown-class": "dyvix-select-dropdown-ocean",
+    "default-animation": "flip"
+  }
+]
+>>>>>>> 28fcee7 (feat(select): add Ocean global theme support)
