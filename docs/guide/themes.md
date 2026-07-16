@@ -26,3 +26,7 @@ Dyvix provides a wide range of themes. You can trigger these by passing the stri
 - `DYVIX_GLOBAL_THEME.MIDNIGHT`: `'Midnight'`
 - `DYVIX_GLOBAL_THEME.CRIMSON`: `'Crimson'`
 - `DYVIX_GLOBAL_THEME.OBSIDIAN`: `'Obsidian'`
+- `DYVIX_GLOBAL_THEME.COFFEE`: `'Coffee'`
+- `DYVIX_GLOBAL_THEME.COSMOS`: `'Cosmos'`
+- `DYVIX_GLOBAL_THEME.SAKURA`: `'Sakura'`
+- `DYVIX_GLOBAL_THEME.VOLCANIC`: `'Volcanic'`
