@@ -9,7 +9,7 @@ export function SelectTest() {
     <DyvixSelect
       animation={DYVIX_GLOBAL_ANIMATION.GLITCH}
       theme={DYVIX_GLOBAL_THEME.MIDNIGHT}
-      placeholder={'number'}
+      placeholder="number"
       className="ex-select"
       type="select"
       elements={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}

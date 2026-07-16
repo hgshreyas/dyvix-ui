@@ -42,6 +42,20 @@
     "default-animation": "drop"
   },
   {
+    "theme": "Ocean",
+    "class": "dyvix-select-ocean",
+    "input-class": "dyvix-select-input-ocean",
+    "dropdown-class": "dyvix-select-dropdown-ocean",
+    "default-animation": "flip"
+  },
+  {
+    "theme": "Forest",
+    "class": "dyvix-select-forest",
+    "input-class": "dyvix-select-input-forest",
+    "dropdown-class": "dyvix-select-dropdown-forest",
+    "default-animation": "glide"
+  },
+  {
     "theme": "Midnight",
     "class": "dyvix-select-midnight",
     "input-class": "dyvix-select-input-midnight",
