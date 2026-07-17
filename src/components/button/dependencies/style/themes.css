@@ -450,8 +450,16 @@
 
 .dyvix-button-sakura {
   background:
-    radial-gradient(circle at top left, rgba(255, 183, 197, 0.25), transparent 50%),
-    radial-gradient(circle at bottom right, rgba(255, 105, 140, 0.15), transparent 50%),
+    radial-gradient(
+      circle at top left,
+      rgba(255, 183, 197, 0.25),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(255, 105, 140, 0.15),
+      transparent 50%
+    ),
     linear-gradient(135deg, #1a0a12 0%, #3d1528 40%, #5c1e3a 70%, #8b2e52 100%);
   color: #fce4ec;
   border: 2px solid rgba(255, 150, 170, 0.5);
