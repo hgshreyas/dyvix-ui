@@ -2,19 +2,19 @@ import React, { type FC, type ReactNode } from 'react';
 import './dependencies/style/style.css';
 import { ConstructClasses } from '../../utils/utils';
 
-interface DyvixNavLinkProps {
+interface DyvixNavBrandProps {
   children: ReactNode,
   className?: string,
   href?: string,
   onClick?: Function 
 }
 
-const DyvixNavLink: FC <DyvixNavLinkProps> = ({ children, className, href, onClick }) => {
+const DyvixNavBrand: FC <DyvixNavBrandProps> = ({ children, className, href, onClick }) => {
 
   type propsType = object
   const props: propsType = {
     ...(href && { href: href }),
-    ...(className && {className: ConstructClasses('dyvix-nav-link', className)}),
+    ...(className && {className: ConstructClasses('dyvix-nav-brand', className)}),
     ...(onClick && {onClick: onClick})
   }
 
@@ -25,4 +25,4 @@ const DyvixNavLink: FC <DyvixNavLinkProps> = ({ children, className, href, onCli
   )
 }
 
-export default DyvixNavLink;
+export default DyvixNavBrand;
