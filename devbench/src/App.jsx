@@ -12,7 +12,7 @@ import { FileTest } from './component/file';
 import { InputTest } from './component/input';
 import { LabelTest } from './component/label';
 import { TableTest } from './component/table';
-import {NavTest} from './component/navigation'
+import { NavTest } from './component/navigation';
 import dyvixLogo from './assets/logo.png';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
