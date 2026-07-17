@@ -2,17 +2,17 @@ import React, { type FC, type ReactNode } from 'react';
 import './dependencies/style/style.css';
 import { ConstructClasses } from '../../utils/utils';
 
-interface DyvixNavGroupProps {
+interface DyvixNavMenuProps {
   children: ReactNode,
   className?: string
 }
 
-const DyvixNavGroup: FC <DyvixNavGroupProps> = ({ children, className }) => {
+const DyvixNavMenu: FC <DyvixNavMenuProps> = ({ children, className }) => {
   return (
-    <div className={ConstructClasses('dyvix-nav-group', className)}>
+    <ul className={ConstructClasses('dyvix-nav-menu', className)}>
       {children}
-    </div>
+    </ul>
   )
 }
 
-export default DyvixNavGroup;
+export default DyvixNavMenu;

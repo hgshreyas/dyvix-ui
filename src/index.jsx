@@ -14,6 +14,6 @@ export { default as DyvixTableRow } from './components/table/DyvixTableRow';
 export { default as DyvixTableCell } from './components/table/DyvixTableCell';
 export { default as DyvixTableHead } from './components/table/DyvixTableHead';
 export { default as DyvixNav } from './components/navigation/navigation';
-export { default as DyvixNavGroup } from './components/navigation/DyvixNavGroup';
+export { default as DyvixNavMenu } from './components/navigation/DyvixNavMenu';
 export { default as DyvixNavLink } from './components/navigation/DyvixNavLink';
 export { default as DyvixNavBrand } from './components/navigation/DyvixNavBrand';
