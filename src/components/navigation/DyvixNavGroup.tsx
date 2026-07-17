@@ -9,7 +9,7 @@ interface DyvixNavGroupProps {
 
 const DyvixNavGroup: FC <DyvixNavGroupProps> = ({ children, className }) => {
   return (
-    <div className={ConstructClasses('dyvix-nav', className)}>
+    <div className={ConstructClasses('dyvix-nav-group', className)}>
       {children}
     </div>
   )

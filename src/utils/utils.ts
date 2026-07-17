@@ -1,5 +1,5 @@
 type ClassType = string | undefined
 
-export function ConstructClasses(...clasess : ClassType[]) {
-  return clasess.filter(Boolean).join(' ');
+export function ConstructClasses(...classes : ClassType[]) {
+  return classes.filter(Boolean).join(' ');
 }
