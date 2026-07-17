@@ -1,9 +1,9 @@
 import React, { type FC, type ReactNode } from 'react';
 import './dependencies/style/style.css';
+import { ConstructClasses } from '../../utils/utils';
 import { EvaluateFailure, GuardStatus } from '../../utils/DyvixGuard';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import Version from '../../../package.json';
 
 interface DyvixNavProps {
   children?: ReactNode,
@@ -14,7 +14,7 @@ interface DyvixNavProps {
 const DyvixNav: FC<DyvixNavProps> = ({ children,  className, animation="fade" }) => {
   return (
     <div className='dyvix-nav-wrapper'>
-      <nav className='dyvix-nav'>
+      <nav className={ConstructClasses('dyvix-nav', className)}>
         {children}
       </nav>
     </div>
