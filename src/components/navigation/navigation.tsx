@@ -7,6 +7,8 @@ import DyvixNavMenu from './DyvixNavMenu';
 import { EvaluateFailure, GuardStatus } from '../../utils/DyvixGuard';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ValidateNavigation } from './validation';
+import Version from '../../../package.json';
 
 interface DyvixNavProps {
   children?: ReactNode;
@@ -38,8 +40,40 @@ const DyvixNav: DyvixNavComponents = ({
   className,
   animation = 'fade'
 }) => {
+  const instanceId = React.useId();
+  const [configs, SetConfig] = React.useState({});
+  const navigationRef = React.useRef(null);
+  const currentAnimation = animation ? (configs as any)['animation'] : null;
+
+  React.useEffect(() => {
+    async function validate() {
+      const validator = await ValidateNavigation(
+        animation,
+        '',
+        children,
+        SetConfig,
+        instanceId
+      );
+
+      if (validator.status === GuardStatus.Error) {
+        return EvaluateFailure(validator.error, validator.status);
+      }
+    }
+
+    validate();
+  }, [animation]);
+  useGSAP(() => {
+    if (!navigationRef.current || !currentAnimation) return;
+
+    gsap.fromTo(navigationRef.current, currentAnimation.from, {
+      ...currentAnimation.to,
+      duration: currentAnimation['default-duration'],
+      ease: currentAnimation.ease
+    });
+  }, [currentAnimation]);
+
   return (
-    <div className="dyvix-nav-wrapper">
+    <div className="dyvix-nav-wrapper" ref={navigationRef}>
       <nav className={ConstructClasses('dyvix-nav', className)}>{children}</nav>
     </div>
   );
