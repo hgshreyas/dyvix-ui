@@ -492,3 +492,56 @@
     inset 0 0 45px rgba(255, 255, 255, 0.08),
     0 0 80px rgba(120, 90, 255, 0.45);
 }
+
+.dyvix-table-sakura {
+  border-radius: 1rem;
+  font-family: 'Geist';
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 183, 197, 0.2),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(255, 105, 140, 0.16),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #1a0a12 0%, #3d1528 40%, #5c1e3a 70%, #8b2e52 100%);
+  border: 2px solid rgba(255, 150, 170, 0.5);
+  color: #fce4ec;
+  box-shadow:
+    inset 0 0 40px rgba(255, 183, 197, 0.08),
+    0 0 50px rgba(255, 105, 140, 0.25);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.3s ease;
+}
+
+.dyvix-table-sakura:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: rgba(255, 180, 200, 0.8);
+  box-shadow:
+    inset 0 0 35px rgba(255, 183, 197, 0.12),
+    0 0 75px rgba(255, 105, 140, 0.4);
+}
+
+.dyvix-table-sakura thead tr {
+  background: rgba(255, 183, 197, 0.08);
+  border-bottom-color: rgba(255, 183, 197, 0.2);
+}
+
+.dyvix-table-sakura th {
+  color: #fff5f8;
+  border-bottom-color: rgba(255, 183, 197, 0.2);
+}
+
+.dyvix-table-sakura td {
+  color: #fce4ec;
+  border-bottom-color: rgba(255, 183, 197, 0.16);
+}
+
+.dyvix-table-sakura tbody tr:hover {
+  background: rgba(255, 183, 197, 0.08);
+}
