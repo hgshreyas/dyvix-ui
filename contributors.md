@@ -56,3 +56,4 @@ Thanks for everyone who has contributed to Dyvix UI!
 - [@Priyesi02](https://github.com/Priyesi02)
 - [@BenjaminAyivoh1](https://github.com/BenjaminAyivoh1)
 - [@aravindhml](https://github.com/aravindhml)
+- [@Mayankshrey438](https://github.com/Mayankshrey438)
