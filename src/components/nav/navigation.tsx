@@ -11,14 +11,14 @@ import { ValidateNavigation } from './validation';
 import Version from '../../../package.json';
 
 interface DyvixConfigBrandProps {
-  label: string,
-  href?: string,
-  onClick?: Function
+  label: string;
+  href?: string;
+  onClick?: Function;
 }
 interface DyvixConfigItemsProps {
-  label: string,
-  href?: string,
-  onClick?: Function
+  label: string;
+  href?: string;
+  onClick?: Function;
 }
 
 interface DyvixNavProps {
@@ -41,7 +41,7 @@ interface DyvixNavProps {
     | null;
   theme?: 'Singularity' | null;
   brand?: DyvixConfigBrandProps;
-  items?: DyvixConfigItemsProps[]
+  items?: DyvixConfigItemsProps[];
 }
 
 interface DyvixNavComponents extends FC<DyvixNavProps> {
@@ -67,8 +67,8 @@ const DyvixNav: DyvixNavComponents = ({
   // Only active when config-driven mode is active
   const ConstructNav = () => {
     const brandSectionProps = {
-      ...(brand?.href && { 'href': brand?.href }),
-      ...(brand?.onClick && { 'onClick': brand?.onClick }),
+      ...(brand?.href && { href: brand?.href }),
+      ...(brand?.onClick && { onClick: brand?.onClick })
     };
 
     return (
@@ -77,16 +77,18 @@ const DyvixNav: DyvixNavComponents = ({
         <DyvixNav.Menu>
           {items?.map((item, index) => {
             const itemSectionProps = {
-              ...(item?.href && { 'href': item?.href }),
-              ...(item?.onClick && { 'onClick': item?.onClick }),
+              ...(item?.href && { href: item?.href }),
+              ...(item?.onClick && { onClick: item?.onClick }),
               key: index
             };
-           return <DyvixNav.Link {...itemSectionProps}>{item.label}</DyvixNav.Link> 
+            return (
+              <DyvixNav.Link {...itemSectionProps}>{item.label}</DyvixNav.Link>
+            );
           })}
         </DyvixNav.Menu>
       </>
-    )
-  }
+    );
+  };
 
   React.useEffect(() => {
     async function validate() {
@@ -120,9 +122,10 @@ const DyvixNav: DyvixNavComponents = ({
     });
   }, [currentAnimation]);
 
-  const resultJSX = React.useMemo(() => (
-    children ?? ConstructNav() 
-  ), [brand, items, children])
+  const resultJSX = React.useMemo(
+    () => children ?? ConstructNav(),
+    [brand, items, children]
+  );
 
   return (
     <div className="dyvix-nav-wrapper" ref={navigationRef}>

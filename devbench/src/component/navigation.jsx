@@ -20,7 +20,7 @@ export function NavTest() {
         brand={{ label: 'Dyvix UI', href: '/' }}
         items={[
           { label: 'Docs', href: '/docs' },
-          { label: 'Components', href: '/components' },
+          { label: 'Components', href: '/components' }
         ]}
         animation="fade"
         theme={'Singularity'}
