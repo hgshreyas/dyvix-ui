@@ -5,7 +5,7 @@ export function NavTest() {
   return (
     <>
       <DyvixNav animation="bubble" theme="Singularity">
-        <DyvixNav.Brand href="/">Dyvix UI</DyvixNav.Brand>
+        <DyvixNav.Brand href="/">GOO</DyvixNav.Brand>
 
         <DyvixNav.Menu>
           <DyvixNav.Link href="/docs">Docs</DyvixNav.Link>
@@ -16,6 +16,15 @@ export function NavTest() {
           </DyvixNav.Link>
         </DyvixNav.Menu>
       </DyvixNav>
+      <DyvixNav
+        brand={{ label: 'Dyvix UI', href: '/' }}
+        items={[
+          { label: 'Docs', href: '/docs' },
+          { label: 'Components', href: '/components' }
+        ]}
+        animation="fade"
+        theme={'Singularity'}
+      />
     </>
   );
 }
