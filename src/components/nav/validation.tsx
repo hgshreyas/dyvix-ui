@@ -23,8 +23,9 @@ export async function ValidateNavigation(
 ) {
   let normalizedAnimation = animation?.trim().toLowerCase();
   const trimedTheme = theme?.trim();
-  const normalizedTheme = trimedTheme ?
-    trimedTheme.charAt(0).toUpperCase() + trimedTheme.slice(1): undefined;
+  const normalizedTheme = trimedTheme
+    ? trimedTheme.charAt(0).toUpperCase() + trimedTheme.slice(1)
+    : undefined;
 
   const isTheme = await ValidatAndLoadJSON(
     CacheMapping,

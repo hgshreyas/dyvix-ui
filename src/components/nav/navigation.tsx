@@ -28,8 +28,7 @@ interface DyvixNavProps {
     | 'float'
     | 'swing'
     | null;
-  theme?:
-    'Singularity' | null
+  theme?: 'Singularity' | null;
 }
 
 interface DyvixNavComponents extends FC<DyvixNavProps> {
@@ -84,7 +83,15 @@ const DyvixNav: DyvixNavComponents = ({
 
   return (
     <div className="dyvix-nav-wrapper" ref={navigationRef}>
-      <nav className={ConstructClasses('dyvix-nav', className, currentTheme?.class)}>{children}</nav>
+      <nav
+        className={ConstructClasses(
+          'dyvix-nav',
+          className,
+          currentTheme?.class
+        )}
+      >
+        {children}
+      </nav>
     </div>
   );
 };
