@@ -13,7 +13,7 @@ export { default as DyvixTableHeader } from './components/table/DyvixTableHeader
 export { default as DyvixTableRow } from './components/table/DyvixTableRow';
 export { default as DyvixTableCell } from './components/table/DyvixTableCell';
 export { default as DyvixTableHead } from './components/table/DyvixTableHead';
-export { default as DyvixNav } from './components/navigation/navigation';
-export { default as DyvixNavMenu } from './components/navigation/DyvixNavMenu';
-export { default as DyvixNavLink } from './components/navigation/DyvixNavLink';
-export { default as DyvixNavBrand } from './components/navigation/DyvixNavBrand';
+export { default as DyvixNav } from './components/nav/navigation';
+export { default as DyvixNavMenu } from './components/nav/DyvixNavMenu';
+export { default as DyvixNavLink } from './components/nav/DyvixNavLink';
+export { default as DyvixNavBrand } from './components/nav/DyvixNavBrand';

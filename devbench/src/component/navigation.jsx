@@ -4,7 +4,7 @@ import { DYVIX_GLOBAL_ANIMATION, DYVIX_GLOBAL_THEME } from 'dyvix-ui';
 export function NavTest() {
   return (
     <>
-      <DyvixNav animation="bubble">
+      <DyvixNav animation="bubble" theme="Singularity">
         <DyvixNav.Brand href="/">Dyvix UI</DyvixNav.Brand>
 
         <DyvixNav.Menu>

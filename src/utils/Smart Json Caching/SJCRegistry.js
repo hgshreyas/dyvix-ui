@@ -1,3 +1,4 @@
+import globalThemesJSON from '../../themeRegistry/themes.json?raw';
 import buttonThemesJSON from '../../components/button/dependencies/themes.json?raw';
 import buttonThemesCSS from '../../components/button/dependencies/style/themes.css?raw';
 import modalThemesJSON from '../../components/modal/dependencies/themes.json?raw';
@@ -15,9 +16,11 @@ import tableThemesJSON from '../../components/table/dependencies/themes.json?raw
 import tableThemesCSS from '../../components/table/dependencies/style/themes.css?raw';
 import selectThemesJSON from '../../components/select/dependencies/themes.json?raw';
 import selectThemesCSS from '../../components/select/dependencies/style/themes.css?raw';
-import globalThemesJSON from '../../themeRegistry/themes.json?raw';
+import navThemesJSON from '../../components/nav/dependencies/themes.json?raw';
+import navThemesCSS from '../../components/nav/dependencies/style/themes.css?raw';
 
 export const JSON_LIBRARY = {
+  '../../themeRegistry/themes.json': globalThemesJSON,
   '../../components/button/dependencies/themes.json': buttonThemesJSON,
   '../../components/modal/dependencies/themes.json': modalThemesJSON,
   '../../components/modal/dependencies/presets.json': modalPresetsJSON,
@@ -28,7 +31,7 @@ export const JSON_LIBRARY = {
   '../../components/label/dependencies/themes.json': labelThemesJSON,
   '../../components/table/dependencies/themes.json': tableThemesJSON,
   '../../components/select/dependencies/themes.json': selectThemesJSON,
-  '../../themeRegistry/themes.json': globalThemesJSON
+  '../../components/nav/dependencies/themes.json': navThemesJSON
 };
 
 export const CSS_LIBRARY = {
@@ -38,5 +41,6 @@ export const CSS_LIBRARY = {
   '../../components/input/dependencies/style/themes.css': inputThemesCSS,
   '../../components/label/dependencies/style/themes.css': labelThemesCSS,
   '../../components/table/dependencies/style/themes.css': tableThemesCSS,
-  '../../components/select/dependencies/style/themes.css': selectThemesCSS
+  '../../components/select/dependencies/style/themes.css': selectThemesCSS,
+  '../../components/nav/dependencies/style/themes.css': navThemesCSS
 };
