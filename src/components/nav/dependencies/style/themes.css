@@ -1,0 +1,48 @@
+.dyvix-nav-singularity {
+  font-family: 'Geist';
+  border: 2px solid var(--dyvix-nav-border, #3c0349);
+  color: var(--dyvix-nav-color, white);
+  background: var(
+    --dyvix-nav-bg,
+    radial-gradient(circle at center, #000000 0%, #1a1a1a 100%)
+  );
+  box-shadow: 0 0 30px #b903e2;
+  -webkit-box-shadow: 0 0 30px #b903e2;
+  -moz-box-shadow: 0 0 30px #b903e2;
+  transition:
+    transform ease-in-out 0.7s,
+    box-shadow ease-in-out 0.6s,
+    border ease-in-out 0.3s,
+    background ease-in-out 0.2s;
+}
+
+.dyvix-nav-singularity:hover {
+  border: 2px solid #27032f;
+  background: radial-gradient(circle at center, #000000 0%, #1a1a1a 120%);
+  box-shadow: 0 0 50px #b903e2;
+  transform: scale(1.015);
+}
+
+.dyvix-nav-singularity .dyvix-nav-brand {
+  font-family: 'Geist';
+  color: #ffffff;
+  text-shadow: 0 0 12px #b903e2;
+}
+
+.dyvix-nav-singularity .dyvix-nav-brand:hover {
+  color: var(--dyvix-nav-brand-hover, #e9b8f7);
+}
+
+.dyvix-nav-singularity .dyvix-nav-link {
+  font-family: 'Geist';
+  color: var(--dyvix-nav-link-color, rgba(255, 255, 255, 0.65));
+}
+
+.dyvix-nav-singularity .dyvix-nav-link:hover {
+  color: var(--dyvix-nav-link-hover, #e9b8f7);
+}
+
+.dyvix-nav-singularity .dyvix-nav-link::after {
+  background-color: #b903e2;
+  box-shadow: 0 0 8px #b903e2;
+}

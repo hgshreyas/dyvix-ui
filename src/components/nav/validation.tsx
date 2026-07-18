@@ -1,0 +1,64 @@
+import type { ReactNode } from 'react';
+import { GuardStatus, allowsNull } from '../../utils/DyvixGuard';
+import { ValidatAndLoadJSON } from '../../utils/Smart Json Caching/SJCManager';
+
+const component = 'Nav';
+const CacheMapping = {
+  theme: {
+    jsonpath: '../../components/nav/dependencies/themes.json',
+    csspath: '../../components/nav/dependencies/style/themes.css'
+  },
+  animation: {
+    jsonpath: '../../components/animations.json',
+    csspath: null
+  }
+};
+
+export async function ValidateNavigation(
+  animation: string | null,
+  theme: string | null | undefined,
+  children: ReactNode,
+  callback: Function,
+  instance: any
+) {
+  let normalizedAnimation = animation?.trim().toLowerCase();
+  const trimedTheme = theme?.trim();
+  const normalizedTheme = trimedTheme
+    ? trimedTheme.charAt(0).toUpperCase() + trimedTheme.slice(1)
+    : undefined;
+
+  const isTheme = await ValidatAndLoadJSON(
+    CacheMapping,
+    normalizedTheme,
+    callback,
+    'theme',
+    component,
+    instance
+  );
+
+  if (normalizedAnimation === '!/' && (isTheme as any)?.config?.theme) {
+    normalizedAnimation = (isTheme as any)?.config?.theme['default-animation'];
+  }
+  const isAnimation = await ValidatAndLoadJSON(
+    CacheMapping,
+    normalizedAnimation,
+    callback,
+    'animation',
+    component
+  );
+
+  if (!(isAnimation as any).status && !allowsNull(normalizedAnimation)) {
+    return {
+      status: GuardStatus.Error,
+      error: 'Please provide a valid animation.'
+    };
+  }
+
+  if (normalizedTheme !== undefined && !(isTheme as any).status) {
+    return {
+      status: GuardStatus.Error,
+      error: 'Please provide a valid theme.'
+    };
+  }
+  return { status: GuardStatus.Success };
+}

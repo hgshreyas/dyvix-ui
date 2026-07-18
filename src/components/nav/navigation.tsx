@@ -26,7 +26,9 @@ interface DyvixNavProps {
     | 'glide'
     | 'drift'
     | 'float'
-    | 'swing';
+    | 'swing'
+    | null;
+  theme?: 'Singularity' | null;
 }
 
 interface DyvixNavComponents extends FC<DyvixNavProps> {
@@ -38,18 +40,20 @@ interface DyvixNavComponents extends FC<DyvixNavProps> {
 const DyvixNav: DyvixNavComponents = ({
   children,
   className,
-  animation = 'fade'
+  animation = 'fade',
+  theme
 }) => {
   const instanceId = React.useId();
   const [configs, SetConfig] = React.useState({});
   const navigationRef = React.useRef(null);
   const currentAnimation = animation ? (configs as any)['animation'] : null;
+  const currentTheme = theme ? (configs as any)['theme'] : null;
 
   React.useEffect(() => {
     async function validate() {
       const validator = await ValidateNavigation(
         animation,
-        '',
+        theme,
         children,
         SetConfig,
         instanceId
@@ -61,7 +65,12 @@ const DyvixNav: DyvixNavComponents = ({
     }
 
     validate();
-  }, [animation]);
+    return () => {
+      const key = `DYVIX_${Version['version']}_Nav_theme_${instanceId}`;
+      const ele = document.getElementById(key);
+      if (ele) ele.remove();
+    };
+  }, [animation, theme]);
   useGSAP(() => {
     if (!navigationRef.current || !currentAnimation) return;
 
@@ -74,7 +83,15 @@ const DyvixNav: DyvixNavComponents = ({
 
   return (
     <div className="dyvix-nav-wrapper" ref={navigationRef}>
-      <nav className={ConstructClasses('dyvix-nav', className)}>{children}</nav>
+      <nav
+        className={ConstructClasses(
+          'dyvix-nav',
+          className,
+          currentTheme?.class
+        )}
+      >
+        {children}
+      </nav>
     </div>
   );
 };
