@@ -9,6 +9,20 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ValidateNavigation } from './validation';
 import Version from '../../../package.json';
+type DyvixAnimationType =
+  | 'fade'
+  | 'bubble'
+  | 'zoom'
+  | 'unfold'
+  | 'glitch'
+  | 'pulse'
+  | 'aurora'
+  | 'drop'
+  | 'flip'
+  | 'glide'
+  | 'drift'
+  | 'float'
+  | 'swing';
 
 interface DyvixConfigBrandProps {
   label: string;
@@ -24,20 +38,11 @@ interface DyvixConfigItemsProps {
 interface DyvixNavProps {
   children?: ReactNode;
   className?: string;
-  animation:
-    | 'fade'
-    | 'bubble'
-    | 'zoom'
-    | 'unfold'
-    | 'glitch'
-    | 'pulse'
-    | 'aurora'
-    | 'drop'
-    | 'flip'
-    | 'glide'
-    | 'drift'
-    | 'float'
-    | 'swing'
+  animation?:
+    DyvixAnimationType
+    | null;
+  microanimation?:
+    DyvixAnimationType
     | null;
   theme?: 'Singularity' | null;
   brand?: DyvixConfigBrandProps;
@@ -54,6 +59,7 @@ const DyvixNav: DyvixNavComponents = ({
   children,
   className,
   animation = 'fade',
+  microanimation,
   brand,
   items,
   theme
@@ -61,9 +67,12 @@ const DyvixNav: DyvixNavComponents = ({
   const instanceId = React.useId();
   const [configs, SetConfig] = React.useState({});
   const navigationRef = React.useRef(null);
+  // only used when config-driven mode is active for microanimations
+  const subRef = React.useRef<(HTMLDivElement | null)[]>([]);
   const currentAnimation = animation ? (configs as any)['animation'] : null;
+  //const currentMicroAnimation = microanimation ? (configs as any)['microanimation'] : currentAnimation;
+  const currentMicroAnimation = currentAnimation
   const currentTheme = theme ? (configs as any)['theme'] : null;
-
   // Only active when config-driven mode is active
   const ConstructNav = () => {
     const brandSectionProps = {
@@ -73,16 +82,16 @@ const DyvixNav: DyvixNavComponents = ({
 
     return (
       <>
-        <DyvixNav.Brand {...brandSectionProps}>{brand?.label}</DyvixNav.Brand>
+        <DyvixNav.Brand {...brandSectionProps} ref={(ele)=> { if (ele) subRef.current[0] = ele}}>{brand?.label}</DyvixNav.Brand>
         <DyvixNav.Menu>
           {items?.map((item, index) => {
             const itemSectionProps = {
               ...(item?.href && { href: item?.href }),
               ...(item?.onClick && { onClick: item?.onClick }),
-              key: index
+              ref: (ele: HTMLDivElement | null) => { if (ele) subRef.current[index + 1] = ele}
             };
             return (
-              <DyvixNav.Link {...itemSectionProps}>{item.label}</DyvixNav.Link>
+              <DyvixNav.Link {...itemSectionProps} key={index}>{item.label}</DyvixNav.Link>
             );
           })}
         </DyvixNav.Menu>
@@ -94,6 +103,7 @@ const DyvixNav: DyvixNavComponents = ({
     async function validate() {
       const validator = await ValidateNavigation(
         animation,
+        microanimation,
         theme,
         children,
         SetConfig,
@@ -111,17 +121,29 @@ const DyvixNav: DyvixNavComponents = ({
       const ele = document.getElementById(key);
       if (ele) ele.remove();
     };
-  }, [animation, theme]);
-  useGSAP(() => {
-    if (!navigationRef.current || !currentAnimation) return;
+  }, [animation, microanimation, theme]);
 
-    gsap.fromTo(navigationRef.current, currentAnimation.from, {
+useGSAP(() => {
+  if (!navigationRef.current || !currentAnimation) return;
+
+  const tl = gsap.timeline();
+  if (currentAnimation) {
+    tl.fromTo(navigationRef.current, currentAnimation.from, {
       ...currentAnimation.to,
       duration: currentAnimation['default-duration'],
       ease: currentAnimation.ease
     });
-  }, [currentAnimation]);
+  }
 
+  if (subRef.current.length > 0) {
+    tl.fromTo(subRef.current, currentMicroAnimation.from, {
+      ...currentMicroAnimation.to,
+      duration: 0.1,
+      ease: currentMicroAnimation.ease,
+      stagger: 0.15
+    });
+  }
+}, [currentAnimation, currentMicroAnimation]);
   const resultJSX = React.useMemo(
     () => children ?? ConstructNav(),
     [brand, items, children]

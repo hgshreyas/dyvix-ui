@@ -11,11 +11,16 @@ const CacheMapping = {
   animation: {
     jsonpath: '../../components/animations.json',
     csspath: null
+  },
+  microanimation: {
+    jsonpath: '../../components/animations.json',
+    csspath: null
   }
 };
 
 export async function ValidateNavigation(
   animation: string | null,
+  microanimation: string | null | undefined,
   theme: string | null | undefined,
   children: ReactNode,
   callback: Function,
@@ -46,6 +51,25 @@ export async function ValidateNavigation(
     'animation',
     component
   );
+
+  if(microanimation) {
+
+    let normalizedMicroAnimation = microanimation?.trim().toLowerCase();
+    const isMicroAnimation = await ValidatAndLoadJSON(
+      CacheMapping,
+      normalizedMicroAnimation,
+      callback,
+      'microanimation',
+      component
+    );
+
+    if (!(isMicroAnimation as any).status && !allowsNull(microanimation)) {
+      return {
+        status: GuardStatus.Error,
+        error: 'Please provide a valid micro animation.'
+      };
+    }
+  }
 
   if (!(isAnimation as any).status && !allowsNull(normalizedAnimation)) {
     return {
