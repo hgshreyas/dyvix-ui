@@ -7,22 +7,26 @@ interface DyvixNavBrandProps {
   className?: string;
   href?: string;
   onClick?: Function;
+  style?: React.CSSProperties;
 }
 
-const DyvixNavBrand: FC<DyvixNavBrandProps> = ({
-  children,
-  className,
-  href,
-  onClick
-}) => {
-  type propsType = object;
-  const props: propsType = {
-    className: ConstructClasses('dyvix-nav-brand', className),
-    ...(href && { href: href }),
-    ...(onClick && { onClick: onClick })
-  };
+const DyvixNavBrand = React.forwardRef<HTMLDivElement, DyvixNavBrandProps>(
+  ({ children, className, href, onClick, style, ...rest }, ref) => {
+    type propsType = object;
+    const props: propsType = {
+      className: ConstructClasses('dyvix-nav-brand', className),
+      ...(href && { href: href }),
+      ...(onClick && { onClick: onClick }),
+      ...(style && { style: style }),
+      ...rest
+    };
 
-  return <a {...props}>{children}</a>;
-};
+    return (
+      <div className="dyvix-nav-brand-wrapper" ref={ref}>
+        <a {...props}>{children}</a>
+      </div>
+    );
+  }
+);
 
 export default DyvixNavBrand;

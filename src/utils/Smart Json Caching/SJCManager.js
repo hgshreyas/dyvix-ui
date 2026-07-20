@@ -13,10 +13,14 @@ export async function SJCManager(
   utility,
   jsonKey,
   jsonclasskey = '',
-  instance
+  instance,
+  jsonfield = ''
 ) {
   let result = null;
   const key = generateCacheKey(component, utility);
+
+  jsonfield = jsonfield || utility;
+
   result = await cachelayerOne(
     jsonpath,
     csspath,
@@ -25,7 +29,8 @@ export async function SJCManager(
     utility,
     jsonKey,
     jsonclasskey,
-    key
+    key,
+    jsonfield
   );
 
   if (result === null)
@@ -37,7 +42,8 @@ export async function SJCManager(
       utility,
       jsonKey,
       jsonclasskey,
-      key
+      key,
+      jsonfield
     );
   if (result === null)
     result = await cachelayerThree(
@@ -48,7 +54,8 @@ export async function SJCManager(
       utility,
       jsonKey,
       jsonclasskey,
-      key
+      key,
+      jsonfield
     );
 
   if (result === null) return result;
@@ -67,7 +74,8 @@ async function cachelayerThree(
   utility,
   jsonKey,
   jsonclasskey,
-  key
+  key,
+  jsonfield
 ) {
   let JsonArray = null;
   let rawCSS = null;
@@ -88,7 +96,7 @@ async function cachelayerThree(
     }
   }
 
-  jsonResult = JsonArray.find((e) => e[utility] === jsonKey);
+  jsonResult = JsonArray.find((e) => e[jsonfield] === jsonKey);
 
   if (utility === 'theme') {
     jsonResult = await resolveTheme(jsonResult, jsonKey, component);
@@ -322,7 +330,8 @@ export async function ValidatAndLoadJSON(
     utilityKey,
     key,
     'class',
-    instance
+    instance,
+    mapper['jsonfield']
   );
   callback((prev) => {
     if (prev[utilityKey] === res) return prev;

@@ -23,6 +23,7 @@ export function NavTest() {
           { label: 'Components', href: '/components' }
         ]}
         animation="fade"
+        microanimation="pulse"
         theme={'Singularity'}
       />
     </>
