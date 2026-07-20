@@ -133,9 +133,9 @@ const DyvixNav: DyvixNavComponents = ({
 
   useGSAP(() => {
     if (!navigationRef.current || !currentAnimation) return;
- 
+
     if (currentAnimation) {
-      gsap.set(navigationRef.current, currentAnimation.from)
+      gsap.set(navigationRef.current, currentAnimation.from);
       gsap.to(navigationRef.current, {
         ...currentAnimation.to,
         duration: currentAnimation['default-duration'],
@@ -148,7 +148,7 @@ const DyvixNav: DyvixNavComponents = ({
         ? currentAnimation['default-duration'] -
           currentAnimation['default-duration'] / 3.5
         : 0;
-      gsap.set(subRef.current, currentMicroAnimation.from)
+      gsap.set(subRef.current, currentMicroAnimation.from);
       gsap.to(subRef.current, {
         ...currentMicroAnimation.to,
         duration: 0.1,
@@ -164,7 +164,17 @@ const DyvixNav: DyvixNavComponents = ({
   );
 
   return (
-    <div className="dyvix-nav-wrapper" ref={navigationRef} style={{ opacity: (animation && !currentAnimation) || (microanimation && !currentMicroAnimation) ? 0 : undefined }}>
+    <div
+      className="dyvix-nav-wrapper"
+      ref={navigationRef}
+      style={{
+        opacity:
+          (animation && !currentAnimation) ||
+          (microanimation && !currentMicroAnimation)
+            ? 0
+            : undefined
+      }}
+    >
       <nav
         className={ConstructClasses(
           'dyvix-nav',
