@@ -14,7 +14,8 @@ const CacheMapping = {
   },
   microanimation: {
     jsonpath: '../../components/animations.json',
-    csspath: null
+    csspath: null,
+    jsonfield: 'animation'
   }
 };
 
@@ -52,8 +53,7 @@ export async function ValidateNavigation(
     component
   );
 
-  if(microanimation) {
-
+  if (microanimation) {
     let normalizedMicroAnimation = microanimation?.trim().toLowerCase();
     const isMicroAnimation = await ValidatAndLoadJSON(
       CacheMapping,

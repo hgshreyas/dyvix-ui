@@ -38,12 +38,8 @@ interface DyvixConfigItemsProps {
 interface DyvixNavProps {
   children?: ReactNode;
   className?: string;
-  animation?:
-    DyvixAnimationType
-    | null;
-  microanimation?:
-    DyvixAnimationType
-    | null;
+  animation?: DyvixAnimationType | null;
+  microanimation?: DyvixAnimationType | null;
   theme?: 'Singularity' | null;
   brand?: DyvixConfigBrandProps;
   items?: DyvixConfigItemsProps[];
@@ -70,8 +66,9 @@ const DyvixNav: DyvixNavComponents = ({
   // only used when config-driven mode is active for microanimations
   const subRef = React.useRef<(HTMLDivElement | null)[]>([]);
   const currentAnimation = animation ? (configs as any)['animation'] : null;
-  //const currentMicroAnimation = microanimation ? (configs as any)['microanimation'] : currentAnimation;
-  const currentMicroAnimation = currentAnimation
+  const currentMicroAnimation = microanimation
+    ? (configs as any)['microanimation']
+    : currentAnimation;
   const currentTheme = theme ? (configs as any)['theme'] : null;
   // Only active when config-driven mode is active
   const ConstructNav = () => {
@@ -82,16 +79,27 @@ const DyvixNav: DyvixNavComponents = ({
 
     return (
       <>
-        <DyvixNav.Brand {...brandSectionProps} ref={(ele)=> { if (ele) subRef.current[0] = ele}}>{brand?.label}</DyvixNav.Brand>
+        <DyvixNav.Brand
+          {...brandSectionProps}
+          ref={(ele) => {
+            if (ele) subRef.current[0] = ele;
+          }}
+        >
+          {brand?.label}
+        </DyvixNav.Brand>
         <DyvixNav.Menu>
           {items?.map((item, index) => {
             const itemSectionProps = {
               ...(item?.href && { href: item?.href }),
               ...(item?.onClick && { onClick: item?.onClick }),
-              ref: (ele: HTMLDivElement | null) => { if (ele) subRef.current[index + 1] = ele}
+              ref: (ele: HTMLDivElement | null) => {
+                if (ele) subRef.current[index + 1] = ele;
+              }
             };
             return (
-              <DyvixNav.Link {...itemSectionProps} key={index}>{item.label}</DyvixNav.Link>
+              <DyvixNav.Link {...itemSectionProps} key={index}>
+                {item.label}
+              </DyvixNav.Link>
             );
           })}
         </DyvixNav.Menu>
@@ -123,34 +131,40 @@ const DyvixNav: DyvixNavComponents = ({
     };
   }, [animation, microanimation, theme]);
 
-useGSAP(() => {
-  if (!navigationRef.current || !currentAnimation) return;
+  useGSAP(() => {
+    if (!navigationRef.current || !currentAnimation) return;
+ 
+    if (currentAnimation) {
+      gsap.set(navigationRef.current, currentAnimation.from)
+      gsap.to(navigationRef.current, {
+        ...currentAnimation.to,
+        duration: currentAnimation['default-duration'],
+        ease: currentAnimation.ease
+      });
+    }
 
-  const tl = gsap.timeline();
-  if (currentAnimation) {
-    tl.fromTo(navigationRef.current, currentAnimation.from, {
-      ...currentAnimation.to,
-      duration: currentAnimation['default-duration'],
-      ease: currentAnimation.ease
-    });
-  }
-
-  if (subRef.current.length > 0) {
-    tl.fromTo(subRef.current, currentMicroAnimation.from, {
-      ...currentMicroAnimation.to,
-      duration: 0.1,
-      ease: currentMicroAnimation.ease,
-      stagger: 0.15
-    });
-  }
-}, [currentAnimation, currentMicroAnimation]);
+    if (subRef.current.length > 0 && currentMicroAnimation) {
+      const delay = currentAnimation['default-duration']
+        ? currentAnimation['default-duration'] -
+          currentAnimation['default-duration'] / 3.5
+        : 0;
+      gsap.set(subRef.current, currentMicroAnimation.from)
+      gsap.to(subRef.current, {
+        ...currentMicroAnimation.to,
+        duration: 0.1,
+        ease: currentMicroAnimation.ease,
+        stagger: 0.15,
+        delay: delay
+      });
+    }
+  }, [currentAnimation, currentMicroAnimation]);
   const resultJSX = React.useMemo(
     () => children ?? ConstructNav(),
     [brand, items, children]
   );
 
   return (
-    <div className="dyvix-nav-wrapper" ref={navigationRef}>
+    <div className="dyvix-nav-wrapper" ref={navigationRef} style={{ opacity: (animation && !currentAnimation) || (microanimation && !currentMicroAnimation) ? 0 : undefined }}>
       <nav
         className={ConstructClasses(
           'dyvix-nav',
