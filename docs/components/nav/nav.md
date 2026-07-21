@@ -31,34 +31,11 @@ DyvixNav is an animated navigation component that supports both themed and unsty
 Used exclusively in composable mode:
 
 - `DyvixNav.Brand`
-  - : Represents the branding section of the navigation.
-
-  Props:
-
-  - `children` : `ReactNode`
-  - `className` : `string`
-  - `href` : `string`
-  - `onClick` : `Function`
-  - `style` : `React.CSSProperties`
-
+  - : Represents the branding section of the navigation. Accepts `children`, `className`, `href`, `onClick`, and `style`.
 - `DyvixNav.Menu`
-  - : Wraps a group of navigation links.
-
-  Props:
-
-  - `children` : `ReactNode`
-  - `className` : `string`
-
+  - : Wraps a group of navigation links. Accepts `children` and `className`.
 - `DyvixNav.Link`
-  - : Represents a single navigation link.
-
-  Props:
-
-  - `children` : `ReactNode`
-  - `className` : `string`
-  - `href` : `string`
-  - `onClick` : `Function`
-  - `style` : `React.CSSProperties`
+  - : Represents a single navigation link. Accepts `children`, `className`, `href`, `onClick`, and `style`.
 
 ## Example
 
