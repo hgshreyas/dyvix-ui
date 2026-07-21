@@ -3,9 +3,6 @@ title: Dyvix Table
 next:
   text: 'Navigation Component'
   link: 'components/nav/nav'
-next:
-  text: 'Navigation Component'
-  link: 'components/nav/nav'
 ---
 
 # Dyvix Table
