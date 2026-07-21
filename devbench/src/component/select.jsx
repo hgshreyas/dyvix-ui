@@ -2,7 +2,7 @@ import {
   DyvixSelect,
   DYVIX_GLOBAL_ANIMATION,
   DYVIX_GLOBAL_THEME
-} from 'dyvix-ui';
+} from '../../../src';
 
 export function SelectTest() {
   return (

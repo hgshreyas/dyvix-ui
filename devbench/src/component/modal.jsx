@@ -3,7 +3,7 @@ import {
   DYVIX_GLOBAL_ANIMATION,
   DYVIX_GLOBAL_THEME,
   DYVIX_MODAL_ELEMENT
-} from 'dyvix-ui';
+} from '../../../src';
 import React from 'react';
 export function ModalTest() {
   const types = Object.values(DYVIX_MODAL_ELEMENT);

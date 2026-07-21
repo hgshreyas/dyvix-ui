@@ -1,4 +1,4 @@
-import { dyvixToast, DyvixToastContainer } from 'dyvix-ui';
+import { dyvixToast, DyvixToastContainer } from '../../../src';
 
 export function ToastTest() {
   function notify() {

@@ -11,7 +11,7 @@ const rawLoaderPlugin: Plugin = {
         path: path.isAbsolute(args.path)
           ? args.path
           : path.join(args.resolveDir, args.path),
-        namespace: 'raw-loader',
+        namespace: 'raw-loader'
       };
     });
 
@@ -20,7 +20,7 @@ const rawLoaderPlugin: Plugin = {
       const contents = await fs.readFile(realPath, 'utf8');
       return { contents, loader: 'text' };
     });
-  },
+  }
 };
 export default defineConfig({
   entry: {
@@ -36,6 +36,7 @@ export default defineConfig({
     toast: 'src/components/toast/toastContainer.jsx'
   },
   format: ['esm'],
+  injectStyle: true,
   dts: true,
   splitting: true,
   external: ['react', 'react-dom', 'gsap', '@gsap/react'],
