@@ -14,7 +14,7 @@ DyvixNav is an animated navigation component that supports both themed and unsty
 - `brand`
   - : `{ label: string, href?: string, onClick?: Function }`. Defines the brand section displayed in config-driven mode.
 - `items`
-  - : `Array<{ label: string, href?: string, onClick?: Function }>` . Defines navigation links displayed in config-driven mode.
+  - : `Array<{ label: string, href?: string, onClick?: Function }>`. Defines navigation links displayed in config-driven mode.
 - `children`
   - : `ReactNode`. Used in composable mode to manually build the navigation using `DyvixNav.Brand`, `DyvixNav.Menu`, and `DyvixNav.Link`.
 - `theme`
