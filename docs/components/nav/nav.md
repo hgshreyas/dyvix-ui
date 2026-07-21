@@ -18,26 +18,9 @@ DyvixNav is an animated navigation component that supports both themed and unsty
 - `children`
   - : `ReactNode`. Used in composable mode to manually build the navigation using `DyvixNav.Brand`, `DyvixNav.Menu`, and `DyvixNav.Link`.
 - `theme`
-  - : `string`. Controls the visual appearance of the navigation. Currently supports `Singularity`.
+  - : `string`. Controls the design and feel of the navigation. See the [Themes list](/guide/themes) for a full list.
 - `animation`
-  - : `string`. Controls the entrance animation of the navigation. Defaults to `fade`.
-
-    Supported animations:
-
-    - fade
-    - bubble
-    - zoom
-    - unfold
-    - glitch
-    - pulse
-    - aurora
-    - drop
-    - flip
-    - glide
-    - drift
-    - float
-    - swing
-
+  - : `string`. Controls the entrance animation of the navigation. Defaults to `fade`. See the [Animation List](/guide/animations) for a full list.
 - `microanimation`
   - : `string`. Controls the animation applied to the brand and individual links in config-driven mode. If omitted, it automatically falls back to the value of `animation`.
 - `className`
