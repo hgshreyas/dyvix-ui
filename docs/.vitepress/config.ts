@@ -68,6 +68,7 @@ export default defineConfig({
           { text: 'Label', link: 'components/label/label' },
           { text: 'Table', link: 'components/table/table' },
           { text: 'Navigation', link: 'components/nav/nav' }
+          { text: 'Navigation', link: 'components/nav/nav' }
         ]
       }
     ],
