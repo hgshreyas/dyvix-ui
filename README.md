@@ -18,9 +18,9 @@
 
 ## Features
 
-- 🎨 **13 global themes** - `Singularity`, `Industrial`, `Ember`, `Frost`, `Blade`, `Neon`, `Aurora`, `Sunset`, `Ocean`, `Forest`, `Midnight`, `Crimson`, `Obsidian` (Component coverage varies between releases).
+- 🎨 **17 global themes** - `Singularity`, `Industrial`, `Ember`, `Frost`, `Blade`, `Neon`, `Aurora`, `Sunset`, `Ocean`, `Forest`, `Midnight`, `Crimson`, `Obsidian`,`Coffee`,`Cosmos`,`Sakura`,`Volcanic` (Component coverage varies between releases).
 - ⚡ **Smart JSON Caching (SJC)** - Multi-tier (L1, L2, L3) system for near-zero latency delivery.
-- ✨ **13 animation presets** - `fade`, `bubble`, `zoom`, `unfold`, `glitch`, `pulse`, `aurora`, `drop`, `flip`, `glide`, `drift`, `float`, `swing`.
+- ✨ **16 animation presets** - `fade`, `bubble`, `zoom`, `unfold`, `glitch`, `pulse`, `aurora`, `drop`, `flip`, `glide`, `drift`, `float`, `swing`,`slideRight`,`spiral`,`bounce`.
 - 🔧 **Config-driven & composable APIs** - Dual mode support where it makes sense.
 - 🗂️ **Sortable tables** - Multi-column sorting.
 - 🧩 **Modal engine** - JSON-driven with validation, presets, file upload, radio, and more.
@@ -49,10 +49,10 @@ function ModalExample() {
     <Modal
       title="Register"
       type="form"
-      animation="bubble" // bubble | fade | zoom | unfold | glitch | pulse | aurora | drop | flip | glide | drift | float | swing
+      animation="bubble" // bubble | fade | zoom | unfold | glitch | pulse | aurora | drop | flip | glide | drift | float | swing | slideRight | spiral | bounce
       Id="register-modal"
       className="modal"
-      theme="Singularity" // Singularity | Industrial | Ember | Frost | Blade | Neon | Aurora | Sunset | Ocean | Forest | Midnight | Crimson | Obsidian
+      theme="Singularity" // Singularity | Industrial | Ember | Frost | Blade | Neon | Aurora | Sunset | Ocean | Forest | Midnight | Crimson | Obsidian | Coffee | Cosmos | Sakura | Volcanic
       elements={[
         {
           type: 'text',
