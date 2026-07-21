@@ -267,11 +267,9 @@ export function validateElements(elements) {
         };
       }
     } else {
-      if (
-        !(
-          Array.isArray(element.placeholder) && element.placeholder.length === 1
-        )
-      ) {
+      if (!(
+        Array.isArray(element.placeholder) && element.placeholder.length === 1
+      )) {
         return {
           status: GuardStatus.Error,
           error:

@@ -1,5 +1,5 @@
-import { DyvixFile } from 'dyvix-ui';
-import { DYVIX_GLOBAL_ANIMATION, DYVIX_GLOBAL_THEME } from 'dyvix-ui';
+import { DyvixFile } from '../../../src';
+import { DYVIX_GLOBAL_ANIMATION, DYVIX_GLOBAL_THEME } from '../../../src';
 export function FileTest() {
   return (
     <>

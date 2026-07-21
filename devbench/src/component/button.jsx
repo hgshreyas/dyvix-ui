@@ -1,5 +1,5 @@
 import React from 'react';
-import { DyvixButton, DYVIX_GLOBAL_THEME } from 'dyvix-ui';
+import { DyvixButton, DYVIX_GLOBAL_THEME } from '../../../src';
 
 export function ButtonTest() {
   const [theme, setTheme] = React.useState(DYVIX_GLOBAL_THEME.SINGULARITY);
